@@ -166,6 +166,13 @@ def _adapt_plan(raw: dict, render_plan_path: Path) -> RenderPlan:
         aspect=raw["aspect_ratio"],
     )
 
+    # Map resolved_assets list → asset_resolutions dict, skipping placeholders.
+    asset_resolutions = {
+        a["asset_id"]: a["uri"]
+        for a in raw.get("resolved_assets", [])
+        if a.get("uri") and not a["uri"].startswith("placeholder://")
+    }
+
     return RenderPlan(
         schema_version=raw.get("schema_version", "1.0.0"),
         plan_id=raw["plan_id"],
@@ -178,7 +185,7 @@ def _adapt_plan(raw: dict, render_plan_path: Path) -> RenderPlan:
         # (see preview_local.py line 151: render_plan_ref=self.plan.asset_manifest_ref).
         asset_manifest_ref=f"file://{render_plan_path.resolve()}",
         timing_lock_hash=raw["timing_lock_hash"],
-        asset_resolutions={},
+        asset_resolutions=asset_resolutions,
         audio_resolutions={},
     )
 
