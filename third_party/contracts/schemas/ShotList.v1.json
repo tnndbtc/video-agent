@@ -1,0 +1,168 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ShotList",
+  "description": "Film-ready shot breakdown. Schema version 1.0.0.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "schema_version",
+    "created_at",
+    "script_id",
+    "shotlist_id",
+    "shots",
+    "timing_lock_hash",
+    "total_duration_sec"
+  ],
+  "properties": {
+    "created_at": {
+      "type": "string"
+    },
+    "episode_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "schema_id": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "script_id": {
+      "type": "string"
+    },
+    "shotlist_id": {
+      "type": "string"
+    },
+    "shots": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Shot"
+      }
+    },
+    "timing_lock_hash": {
+      "type": "string"
+    },
+    "total_duration_sec": {
+      "type": "number"
+    }
+  },
+  "$defs": {
+    "Shot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "audio_intent",
+        "camera_framing",
+        "camera_movement",
+        "duration_sec",
+        "scene_id",
+        "shot_id"
+      ],
+      "properties": {
+        "action_beat": {
+          "type": "string"
+        },
+        "audio_intent": {
+          "$ref": "#/$defs/AudioIntent"
+        },
+        "camera_framing": {
+          "type": "string"
+        },
+        "camera_movement": {
+          "type": "string"
+        },
+        "characters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CharacterInShot"
+          }
+        },
+        "duration_sec": {
+          "type": "number"
+        },
+        "emotional_tag": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "environment_notes": {
+          "type": "string"
+        },
+        "scene_id": {
+          "type": "string"
+        },
+        "shot_id": {
+          "type": "string"
+        },
+        "shot_template_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "AudioIntent": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "music_mood": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sfx_tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "vo_speaker_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "vo_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "CharacterInShot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "character_id"
+      ],
+      "properties": {
+        "character_id": {
+          "type": "string"
+        },
+        "expression": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pose": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

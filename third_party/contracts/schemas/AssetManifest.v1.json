@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AssetManifest",
+  "type": "object",
+  "required": ["schema_id", "schema_version", "manifest_id", "project_id", "shotlist_ref", "character_packs", "backgrounds", "vo_items"],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0.0"},
+    "manifest_id": {"type": "string"},
+    "project_id": {"type": "string"},
+    "shotlist_ref": {"type": "string"},
+    "character_packs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["asset_id", "license_type"],
+        "additionalProperties": true,
+        "properties": {
+          "asset_id":     {"type": "string"},
+          "license_type": {"type": "string"}
+        }
+      }
+    },
+    "backgrounds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["asset_id", "license_type"],
+        "additionalProperties": true,
+        "properties": {
+          "asset_id":     {"type": "string"},
+          "license_type": {"type": "string"}
+        }
+      }
+    },
+    "vo_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["item_id", "speaker_id", "text", "license_type"],
+        "additionalProperties": true,
+        "properties": {
+          "item_id": {"type": "string"},
+          "speaker_id": {"type": "string"},
+          "text": {"type": "string"},
+          "license_type": {"type": "string"}
+        }
+      }
+    }
+  }
+}

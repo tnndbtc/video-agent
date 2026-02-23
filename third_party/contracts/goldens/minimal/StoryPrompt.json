@@ -1,0 +1,1 @@
+{"characters":[{"id":"sheriff","role":"protagonist"},{"id":"bandit","role":"antagonist"}],"constraints":{"max_scenes":3},"episode_goal":"Find the hidden treasure","generation_seed":42,"prompt_id":"ep001","schema_id":"StoryPrompt","schema_version":"1.0","series":{"genre":"Western","title":"Western Tales","tone":"Adventurous"},"setting":{"primary_location":"Old West Town"}}

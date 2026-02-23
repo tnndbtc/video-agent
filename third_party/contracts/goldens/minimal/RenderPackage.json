@@ -1,0 +1,1 @@
+{"desired_outputs":[],"idempotency_key":"key-minimal","inputs":{"asset_manifest_ref":"manifest-minimal","render_plan_ref":"plan-minimal","shotlist_ref":"shotlist-minimal"},"render_profile":"preview_local","request_id":"request-minimal","schema_id":"RenderPackage","schema_version":"1.0.0"}

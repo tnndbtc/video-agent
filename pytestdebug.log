@@ -1,0 +1,2359 @@
+versions pytest-9.0.2, python-3.12.3.final.0
+invocation_dir=/home/tnnd/data/code/video-agent
+cwd=/home/tnnd/data/code/video-agent
+args=('tools/tests/unit/', '--collect-only', '--debug')
+
+  pytest_cmdline_main [hook]
+      config: <_pytest.config.Config object at 0x7a54365d8860>
+    pytest_plugin_registered [hook]
+        plugin: <Session  exitstatus='<UNSET>' testsfailed=0 testscollected=0>
+        plugin_name: session
+        manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+    finish pytest_plugin_registered --> [] [hook]
+    pytest_configure [hook]
+        config: <_pytest.config.Config object at 0x7a54365d8860>
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.LFPlugin object at 0x7a54347e0980>
+          plugin_name: lfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.NFPlugin object at 0x7a54350948f0>
+          plugin_name: nfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+    early skip of rewriting module: faulthandler [assertion]
+      pytest_plugin_registered [hook]
+          plugin: <class '_pytest.legacypath.LegacyTmpdirPlugin'>
+          plugin_name: legacypath-tmpdir
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+    early skip of rewriting module: pdb [assertion]
+    early skip of rewriting module: cmd [assertion]
+    early skip of rewriting module: code [assertion]
+    early skip of rewriting module: codeop [assertion]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+          plugin_name: 134502086620272
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.Config object at 0x7a54365d8860>
+          plugin_name: pytestconfig
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.mark' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/mark/__init__.py'>
+          plugin_name: mark
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.main' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/main.py'>
+          plugin_name: main
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.runner' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/runner.py'>
+          plugin_name: runner
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.fixtures' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/fixtures.py'>
+          plugin_name: fixtures
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.helpconfig' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/helpconfig.py'>
+          plugin_name: helpconfig
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.python' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/python.py'>
+          plugin_name: python
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.terminal' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/terminal.py'>
+          plugin_name: terminal
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.debugging' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/debugging.py'>
+          plugin_name: debugging
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unittest' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/unittest.py'>
+          plugin_name: unittest
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.capture' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/capture.py'>
+          plugin_name: capture
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.skipping' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/skipping.py'>
+          plugin_name: skipping
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.legacypath' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/legacypath.py'>
+          plugin_name: legacypath
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.tmpdir' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/tmpdir.py'>
+          plugin_name: tmpdir
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.monkeypatch' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/monkeypatch.py'>
+          plugin_name: monkeypatch
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.recwarn' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/recwarn.py'>
+          plugin_name: recwarn
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.pastebin' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/pastebin.py'>
+          plugin_name: pastebin
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.assertion' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/assertion/__init__.py'>
+          plugin_name: assertion
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.junitxml' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/junitxml.py'>
+          plugin_name: junitxml
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.doctest' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/doctest.py'>
+          plugin_name: doctest
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.cacheprovider' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/cacheprovider.py'>
+          plugin_name: cacheprovider
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setuponly' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/setuponly.py'>
+          plugin_name: setuponly
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setupplan' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/setupplan.py'>
+          plugin_name: setupplan
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.stepwise' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/stepwise.py'>
+          plugin_name: stepwise
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unraisableexception' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/unraisableexception.py'>
+          plugin_name: unraisableexception
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.threadexception' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/threadexception.py'>
+          plugin_name: threadexception
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.warnings' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/warnings.py'>
+          plugin_name: warnings
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.logging' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/logging.py'>
+          plugin_name: logging
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.reports' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/reports.py'>
+          plugin_name: reports
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.faulthandler' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/faulthandler.py'>
+          plugin_name: faulthandler
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.subtests' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/subtests.py'>
+          plugin_name: subtests
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'anyio.pytest_plugin' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/anyio/pytest_plugin.py'>
+          plugin_name: anyio
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'pytest_asyncio.plugin' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/pytest_asyncio/plugin.py'>
+          plugin_name: asyncio
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <CaptureManager _method='fd' _global_capturing=<MultiCapture out=<FDCapture 1 oldfd=5 _state='suspended' tmpfile=<_io.TextIOWrapper name="<_io.FileIO name=6 mode='rb+' closefd=True>" mode='r+' encoding='utf-8'>> err=<FDCapture 2 oldfd=7 _state='suspended' tmpfile=<_io.TextIOWrapper name="<_io.FileIO name=8 mode='rb+' closefd=True>" mode='r+' encoding='utf-8'>> in_=<FDCapture 0 oldfd=3 _state='started' tmpfile=<_io.TextIOWrapper name='/dev/null' mode='r' encoding='utf-8'>> _state='suspended' _in_suspended=False> _capture_fixture=None>
+          plugin_name: capturemanager
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'tools.conftest' from '/home/tnnd/data/code/video-agent/tools/conftest.py'>
+          plugin_name: /home/tnnd/data/code/video-agent/tools/conftest.py
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'tools.tests.conftest' from '/home/tnnd/data/code/video-agent/tools/tests/conftest.py'>
+          plugin_name: /home/tnnd/data/code/video-agent/tools/tests/conftest.py
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+          plugin_name: session
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.LFPlugin object at 0x7a54347e0980>
+          plugin_name: lfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.NFPlugin object at 0x7a54350948f0>
+          plugin_name: nfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <class '_pytest.legacypath.LegacyTmpdirPlugin'>
+          plugin_name: legacypath-tmpdir
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.terminal.TerminalReporter object at 0x7a54347e1df0>
+          plugin_name: terminalreporter
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.logging.LoggingPlugin object at 0x7a543461e720>
+          plugin_name: logging-plugin
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+    finish pytest_configure --> [] [hook]
+    pytest_sessionstart [hook]
+        session: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+          plugin_name: 134502086620272
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.Config object at 0x7a54365d8860>
+          plugin_name: pytestconfig
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.mark' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/mark/__init__.py'>
+          plugin_name: mark
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.main' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/main.py'>
+          plugin_name: main
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.runner' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/runner.py'>
+          plugin_name: runner
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.fixtures' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/fixtures.py'>
+          plugin_name: fixtures
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.helpconfig' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/helpconfig.py'>
+          plugin_name: helpconfig
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.python' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/python.py'>
+          plugin_name: python
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.terminal' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/terminal.py'>
+          plugin_name: terminal
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.debugging' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/debugging.py'>
+          plugin_name: debugging
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unittest' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/unittest.py'>
+          plugin_name: unittest
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.capture' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/capture.py'>
+          plugin_name: capture
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.skipping' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/skipping.py'>
+          plugin_name: skipping
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.legacypath' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/legacypath.py'>
+          plugin_name: legacypath
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.tmpdir' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/tmpdir.py'>
+          plugin_name: tmpdir
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.monkeypatch' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/monkeypatch.py'>
+          plugin_name: monkeypatch
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.recwarn' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/recwarn.py'>
+          plugin_name: recwarn
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.pastebin' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/pastebin.py'>
+          plugin_name: pastebin
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.assertion' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/assertion/__init__.py'>
+          plugin_name: assertion
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.junitxml' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/junitxml.py'>
+          plugin_name: junitxml
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.doctest' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/doctest.py'>
+          plugin_name: doctest
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.cacheprovider' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/cacheprovider.py'>
+          plugin_name: cacheprovider
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setuponly' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/setuponly.py'>
+          plugin_name: setuponly
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setupplan' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/setupplan.py'>
+          plugin_name: setupplan
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.stepwise' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/stepwise.py'>
+          plugin_name: stepwise
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unraisableexception' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/unraisableexception.py'>
+          plugin_name: unraisableexception
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.threadexception' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/threadexception.py'>
+          plugin_name: threadexception
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.warnings' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/warnings.py'>
+          plugin_name: warnings
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.logging' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/logging.py'>
+          plugin_name: logging
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.reports' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/reports.py'>
+          plugin_name: reports
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.faulthandler' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/faulthandler.py'>
+          plugin_name: faulthandler
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.subtests' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/subtests.py'>
+          plugin_name: subtests
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'anyio.pytest_plugin' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/anyio/pytest_plugin.py'>
+          plugin_name: anyio
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'pytest_asyncio.plugin' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/pytest_asyncio/plugin.py'>
+          plugin_name: asyncio
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <CaptureManager _method='fd' _global_capturing=<MultiCapture out=<FDCapture 1 oldfd=5 _state='suspended' tmpfile=<_io.TextIOWrapper name="<_io.FileIO name=6 mode='rb+' closefd=True>" mode='r+' encoding='utf-8'>> err=<FDCapture 2 oldfd=7 _state='suspended' tmpfile=<_io.TextIOWrapper name="<_io.FileIO name=8 mode='rb+' closefd=True>" mode='r+' encoding='utf-8'>> in_=<FDCapture 0 oldfd=3 _state='started' tmpfile=<_io.TextIOWrapper name='/dev/null' mode='r' encoding='utf-8'>> _state='suspended' _in_suspended=False> _capture_fixture=None>
+          plugin_name: capturemanager
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'tools.conftest' from '/home/tnnd/data/code/video-agent/tools/conftest.py'>
+          plugin_name: /home/tnnd/data/code/video-agent/tools/conftest.py
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'tools.tests.conftest' from '/home/tnnd/data/code/video-agent/tools/tests/conftest.py'>
+          plugin_name: /home/tnnd/data/code/video-agent/tools/tests/conftest.py
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+          plugin_name: session
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.LFPlugin object at 0x7a54347e0980>
+          plugin_name: lfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.NFPlugin object at 0x7a54350948f0>
+          plugin_name: nfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <class '_pytest.legacypath.LegacyTmpdirPlugin'>
+          plugin_name: legacypath-tmpdir
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.terminal.TerminalReporter object at 0x7a54347e1df0>
+          plugin_name: terminalreporter
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.logging.LoggingPlugin object at 0x7a543461e720>
+          plugin_name: logging-plugin
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.fixtures.FixtureManager object at 0x7a54347e0aa0>
+          plugin_name: funcmanage
+          manager: <_pytest.config.PytestPluginManager object at 0x7a5435183470>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_report_header [hook]
+          config: <_pytest.config.Config object at 0x7a54365d8860>
+          start_path: /home/tnnd/data/code/video-agent
+          startdir: /home/tnnd/data/code/video-agent
+      finish pytest_report_header --> [['asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function'], ['rootdir: /home/tnnd/data/code/video-agent/tools', 'configfile: pytest.ini', 'plugins: anyio-4.12.1, asyncio-1.3.0'], ['using: pytest-9.0.2', 'registered third-party plugins:', '  anyio-4.12.1 at /home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/anyio/pytest_plugin.py', '  pytest-asyncio-1.3.0 at /home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/pytest_asyncio/plugin.py']] [hook]
+    finish pytest_sessionstart --> [] [hook]
+    pytest_collection [hook]
+        session: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+    perform_collect <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0> ['tools/tests/unit/'] [collection]
+        pytest_collectstart [hook]
+            collector: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+        finish pytest_collectstart --> [] [hook]
+        pytest_make_collect_report [hook]
+            collector: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+        processing argument CollectionArgument(path=PosixPath('/home/tnnd/data/code/video-agent/tools/tests/unit'), parts=[], parametrization=None, module_name=None, original_index=0) [collection]
+            pytest_collect_directory [hook]
+                path: /home/tnnd/data/code/video-agent/tools
+                parent: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_directory --> <Package tools> [hook]
+            pytest_collectstart [hook]
+                collector: <Package tools>
+            finish pytest_collectstart --> [] [hook]
+            pytest_make_collect_report [hook]
+                collector: <Package tools>
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x7a54365d8860>
+                  collection_path: /home/tnnd/data/code/video-agent/tools/__init__.py
+                  path: /home/tnnd/data/code/video-agent/tools/__init__.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tools>
+                  file_path: /home/tnnd/data/code/video-agent/tools/__init__.py
+                  path: /home/tnnd/data/code/video-agent/tools/__init__.py
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x7a54365d8860>
+                  collection_path: /home/tnnd/data/code/video-agent/tools/README.md
+                  path: /home/tnnd/data/code/video-agent/tools/README.md
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tools>
+                  file_path: /home/tnnd/data/code/video-agent/tools/README.md
+                  path: /home/tnnd/data/code/video-agent/tools/README.md
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x7a54365d8860>
+                  collection_path: /home/tnnd/data/code/video-agent/tools/__pycache__
+                  path: /home/tnnd/data/code/video-agent/tools/__pycache__
+              finish pytest_ignore_collect --> True [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x7a54365d8860>
+                  collection_path: /home/tnnd/data/code/video-agent/tools/conftest.py
+                  path: /home/tnnd/data/code/video-agent/tools/conftest.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tools>
+                  file_path: /home/tnnd/data/code/video-agent/tools/conftest.py
+                  path: /home/tnnd/data/code/video-agent/tools/conftest.py
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x7a54365d8860>
+                  collection_path: /home/tnnd/data/code/video-agent/tools/pytest.ini
+                  path: /home/tnnd/data/code/video-agent/tools/pytest.ini
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tools>
+                  file_path: /home/tnnd/data/code/video-agent/tools/pytest.ini
+                  path: /home/tnnd/data/code/video-agent/tools/pytest.ini
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x7a54365d8860>
+                  collection_path: /home/tnnd/data/code/video-agent/tools/renderer
+                  path: /home/tnnd/data/code/video-agent/tools/renderer
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: /home/tnnd/data/code/video-agent/tools/renderer
+                  parent: <Package tools>
+              finish pytest_collect_directory --> <Package renderer> [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x7a54365d8860>
+                  collection_path: /home/tnnd/data/code/video-agent/tools/requirements.txt
+                  path: /home/tnnd/data/code/video-agent/tools/requirements.txt
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tools>
+                  file_path: /home/tnnd/data/code/video-agent/tools/requirements.txt
+                  path: /home/tnnd/data/code/video-agent/tools/requirements.txt
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x7a54365d8860>
+                  collection_path: /home/tnnd/data/code/video-agent/tools/schemas
+                  path: /home/tnnd/data/code/video-agent/tools/schemas
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: /home/tnnd/data/code/video-agent/tools/schemas
+                  parent: <Package tools>
+              finish pytest_collect_directory --> <Package schemas> [hook]
+              pytest_collect_directory [hook]
+                  path: /home/tnnd/data/code/video-agent/tools/tests
+                  parent: <Package tools>
+              finish pytest_collect_directory --> <Package tests> [hook]
+            finish pytest_make_collect_report --> <CollectReport '.' lenresult=3 outcome='passed'> [hook]
+            pytest_collectstart [hook]
+                collector: <Package tests>
+            finish pytest_collectstart --> [] [hook]
+            pytest_make_collect_report [hook]
+                collector: <Package tests>
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x7a54365d8860>
+                  collection_path: /home/tnnd/data/code/video-agent/tools/tests/__init__.py
+                  path: /home/tnnd/data/code/video-agent/tools/tests/__init__.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: /home/tnnd/data/code/video-agent/tools/tests/__init__.py
+                  path: /home/tnnd/data/code/video-agent/tools/tests/__init__.py
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x7a54365d8860>
+                  collection_path: /home/tnnd/data/code/video-agent/tools/tests/__pycache__
+                  path: /home/tnnd/data/code/video-agent/tools/tests/__pycache__
+              finish pytest_ignore_collect --> True [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x7a54365d8860>
+                  collection_path: /home/tnnd/data/code/video-agent/tools/tests/_fixture_builders.py
+                  path: /home/tnnd/data/code/video-agent/tools/tests/_fixture_builders.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: /home/tnnd/data/code/video-agent/tools/tests/_fixture_builders.py
+                  path: /home/tnnd/data/code/video-agent/tools/tests/_fixture_builders.py
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x7a54365d8860>
+                  collection_path: /home/tnnd/data/code/video-agent/tools/tests/conftest.py
+                  path: /home/tnnd/data/code/video-agent/tools/tests/conftest.py
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  parent: <Package tests>
+                  file_path: /home/tnnd/data/code/video-agent/tools/tests/conftest.py
+                  path: /home/tnnd/data/code/video-agent/tools/tests/conftest.py
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x7a54365d8860>
+                  collection_path: /home/tnnd/data/code/video-agent/tools/tests/golden
+                  path: /home/tnnd/data/code/video-agent/tools/tests/golden
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: /home/tnnd/data/code/video-agent/tools/tests/golden
+                  parent: <Package tests>
+              finish pytest_collect_directory --> <Package golden> [hook]
+              pytest_ignore_collect [hook]
+                  config: <_pytest.config.Config object at 0x7a54365d8860>
+                  collection_path: /home/tnnd/data/code/video-agent/tools/tests/integration
+                  path: /home/tnnd/data/code/video-agent/tools/tests/integration
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: /home/tnnd/data/code/video-agent/tools/tests/integration
+                  parent: <Package tests>
+              finish pytest_collect_directory --> <Package integration> [hook]
+              pytest_collect_directory [hook]
+                  path: /home/tnnd/data/code/video-agent/tools/tests/unit
+                  parent: <Package tests>
+              finish pytest_collect_directory --> <Package unit> [hook]
+            finish pytest_make_collect_report --> <CollectReport 'tests' lenresult=3 outcome='passed'> [hook]
+        finish pytest_make_collect_report --> <CollectReport '' lenresult=1 outcome='passed'> [hook]
+        pytest_collectreport [hook]
+            report: <CollectReport '' lenresult=1 outcome='passed'>
+        finish pytest_collectreport --> [] [hook]
+    genitems <Package unit> [collection]
+      pytest_collectstart [hook]
+          collector: <Package unit>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Package unit>
+        pytest_ignore_collect [hook]
+            config: <_pytest.config.Config object at 0x7a54365d8860>
+            collection_path: /home/tnnd/data/code/video-agent/tools/tests/unit/__init__.py
+            path: /home/tnnd/data/code/video-agent/tools/tests/unit/__init__.py
+        finish pytest_ignore_collect --> None [hook]
+        pytest_collect_file [hook]
+            parent: <Package unit>
+            file_path: /home/tnnd/data/code/video-agent/tools/tests/unit/__init__.py
+            path: /home/tnnd/data/code/video-agent/tools/tests/unit/__init__.py
+        finish pytest_collect_file --> [] [hook]
+        pytest_ignore_collect [hook]
+            config: <_pytest.config.Config object at 0x7a54365d8860>
+            collection_path: /home/tnnd/data/code/video-agent/tools/tests/unit/__pycache__
+            path: /home/tnnd/data/code/video-agent/tools/tests/unit/__pycache__
+        finish pytest_ignore_collect --> True [hook]
+        pytest_ignore_collect [hook]
+            config: <_pytest.config.Config object at 0x7a54365d8860>
+            collection_path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_placeholder.py
+            path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_placeholder.py
+        finish pytest_ignore_collect --> None [hook]
+        pytest_collect_file [hook]
+            parent: <Package unit>
+            file_path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_placeholder.py
+            path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_placeholder.py
+          pytest_pycollect_makemodule [hook]
+              parent: <Package unit>
+              module_path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_placeholder.py
+              path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_placeholder.py
+          finish pytest_pycollect_makemodule --> <Module test_placeholder.py> [hook]
+        finish pytest_collect_file --> [<Module test_placeholder.py>] [hook]
+        pytest_ignore_collect [hook]
+            config: <_pytest.config.Config object at 0x7a54365d8860>
+            collection_path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_preview_local.py
+            path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_preview_local.py
+        finish pytest_ignore_collect --> None [hook]
+        pytest_collect_file [hook]
+            parent: <Package unit>
+            file_path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_preview_local.py
+            path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_preview_local.py
+          pytest_pycollect_makemodule [hook]
+              parent: <Package unit>
+              module_path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_preview_local.py
+              path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_preview_local.py
+          finish pytest_pycollect_makemodule --> <Module test_preview_local.py> [hook]
+        finish pytest_collect_file --> [<Module test_preview_local.py>] [hook]
+        pytest_ignore_collect [hook]
+            config: <_pytest.config.Config object at 0x7a54365d8860>
+            collection_path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_schemas.py
+            path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_schemas.py
+        finish pytest_ignore_collect --> None [hook]
+        pytest_collect_file [hook]
+            parent: <Package unit>
+            file_path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_schemas.py
+            path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_schemas.py
+          pytest_pycollect_makemodule [hook]
+              parent: <Package unit>
+              module_path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_schemas.py
+              path: /home/tnnd/data/code/video-agent/tools/tests/unit/test_schemas.py
+          finish pytest_pycollect_makemodule --> <Module test_schemas.py> [hook]
+        finish pytest_collect_file --> [<Module test_schemas.py>] [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/unit' lenresult=3 outcome='passed'> [hook]
+    genitems <Module test_placeholder.py> [collection]
+      pytest_collectstart [hook]
+          collector: <Module test_placeholder.py>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Module test_placeholder.py>
+      find_module called for: tools.tests.unit [assertion]
+      find_module called for: tools.tests.unit.test_placeholder [assertion]
+      matched test file '/home/tnnd/data/code/video-agent/tools/tests/unit/test_placeholder.py' [assertion]
+      found cached rewritten pyc for /home/tnnd/data/code/video-agent/tools/tests/unit/test_placeholder.py [assertion]
+      early skip of rewriting module: hashlib [assertion]
+      early skip of rewriting module: _hashlib [assertion]
+      early skip of rewriting module: _blake2 [assertion]
+      early skip of rewriting module: renderer [assertion]
+      early skip of rewriting module: renderer.placeholder [assertion]
+      early skip of rewriting module: PIL.ImageDraw [assertion]
+      early skip of rewriting module: PIL.ImageColor [assertion]
+      early skip of rewriting module: PIL.ImageText [assertion]
+      early skip of rewriting module: PIL.ImageFont [assertion]
+      early skip of rewriting module: PIL._typing [assertion]
+      early skip of rewriting module: PIL._imagingft [assertion]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_placeholder.py>
+            name: annotations
+            obj: _Feature((3, 7, 0, 'beta', 1), None, 16777216)
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_placeholder.py>
+            name: @py_builtins
+            obj: <module 'builtins' (built-in)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_placeholder.py>
+            name: @pytest_ar
+            obj: <module '_pytest.assertion.rewrite' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/assertion/rewrite.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_placeholder.py>
+            name: hashlib
+            obj: <module 'hashlib' from '/usr/lib/python3.12/hashlib.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_placeholder.py>
+            name: Path
+            obj: <class 'pathlib.Path'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_placeholder.py>
+            name: pytest
+            obj: <module 'pytest' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/pytest/__init__.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_placeholder.py>
+            name: Image
+            obj: <module 'PIL.Image' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/PIL/Image.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_placeholder.py>
+            name: _PIL_AVAILABLE
+            obj: True
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_placeholder.py>
+            name: pytestmark
+            obj: MarkDecorator(mark=Mark(name='skipif', args=(False,), kwargs={'reason': 'Pillow not installed'}))
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_placeholder.py>
+            name: generate_placeholder
+            obj: <function generate_placeholder at 0x7a543462e8e0>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_placeholder.py>
+            name: TestGeneratePlaceholder
+            obj: <class 'tools.tests.unit.test_placeholder.TestGeneratePlaceholder'>
+        finish pytest_pycollect_makeitem --> [<Class TestGeneratePlaceholder>] [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/unit/test_placeholder.py' lenresult=1 outcome='passed'> [hook]
+    genitems <Class TestGeneratePlaceholder> [collection]
+      pytest_collectstart [hook]
+          collector: <Class TestGeneratePlaceholder>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Class TestGeneratePlaceholder>
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestGeneratePlaceholder>
+            name: test_produces_png_at_output_path
+            obj: <function TestGeneratePlaceholder.test_produces_png_at_output_path at 0x7a543462e700>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a543463ab40>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_produces_png_at_output_path>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestGeneratePlaceholder>
+            name: test_correct_dimensions
+            obj: <function TestGeneratePlaceholder.test_correct_dimensions at 0x7a543468a160>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a543463ab40>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_correct_dimensions>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestGeneratePlaceholder>
+            name: test_deterministic_same_inputs
+            obj: <function TestGeneratePlaceholder.test_deterministic_same_inputs at 0x7a543468a200>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a543463ab40>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_deterministic_same_inputs>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestGeneratePlaceholder>
+            name: test_different_shot_ids_produce_different_labels
+            obj: <function TestGeneratePlaceholder.test_different_shot_ids_produce_different_labels at 0x7a543468a2a0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a543463ab40>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_different_shot_ids_produce_different_labels>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestGeneratePlaceholder>
+            name: test_cache_dir_used_when_no_output_path
+            obj: <function TestGeneratePlaceholder.test_cache_dir_used_when_no_output_path at 0x7a543468a340>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a543463ab40>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_cache_dir_used_when_no_output_path>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestGeneratePlaceholder>
+            name: test_cached_result_returned_on_second_call
+            obj: <function TestGeneratePlaceholder.test_cached_result_returned_on_second_call at 0x7a543468a3e0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a543463ab40>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_cached_result_returned_on_second_call>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestGeneratePlaceholder>
+            name: test_no_output_path_and_no_cache_dir_raises
+            obj: <function TestGeneratePlaceholder.test_no_output_path_and_no_cache_dir_raises at 0x7a543468a480>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a543463ab40>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_no_output_path_and_no_cache_dir_raises>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestGeneratePlaceholder>
+            name: test_invalid_color_falls_back_to_default
+            obj: <function TestGeneratePlaceholder.test_invalid_color_falls_back_to_default at 0x7a543468a520>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a543463ab40>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_invalid_color_falls_back_to_default>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestGeneratePlaceholder>
+            name: test_custom_label
+            obj: <function TestGeneratePlaceholder.test_custom_label at 0x7a543468a5c0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a543463ab40>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_custom_label>] [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/unit/test_placeholder.py::TestGeneratePlaceholder' lenresult=9 outcome='passed'> [hook]
+    genitems <Function test_produces_png_at_output_path> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_produces_png_at_output_path>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_correct_dimensions> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_correct_dimensions>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_deterministic_same_inputs> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_deterministic_same_inputs>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_different_shot_ids_produce_different_labels> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_different_shot_ids_produce_different_labels>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_cache_dir_used_when_no_output_path> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_cache_dir_used_when_no_output_path>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_cached_result_returned_on_second_call> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_cached_result_returned_on_second_call>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_no_output_path_and_no_cache_dir_raises> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_no_output_path_and_no_cache_dir_raises>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_invalid_color_falls_back_to_default> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_invalid_color_falls_back_to_default>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_custom_label> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_custom_label>
+      finish pytest_itemcollected --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/unit/test_placeholder.py::TestGeneratePlaceholder' lenresult=9 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/unit/test_placeholder.py' lenresult=1 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+    genitems <Module test_preview_local.py> [collection]
+      pytest_collectstart [hook]
+          collector: <Module test_preview_local.py>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Module test_preview_local.py>
+      find_module called for: tools.tests.unit.test_preview_local [assertion]
+      matched test file '/home/tnnd/data/code/video-agent/tools/tests/unit/test_preview_local.py' [assertion]
+      found cached rewritten pyc for /home/tnnd/data/code/video-agent/tools/tests/unit/test_preview_local.py [assertion]
+      early skip of rewriting module: schemas [assertion]
+      early skip of rewriting module: schemas.asset_manifest [assertion]
+      early skip of rewriting module: pydantic [assertion]
+      early skip of rewriting module: pydantic._migration [assertion]
+      early skip of rewriting module: pydantic.warnings [assertion]
+      early skip of rewriting module: pydantic.version [assertion]
+      early skip of rewriting module: pydantic_core [assertion]
+      early skip of rewriting module: pydantic_core._pydantic_core [assertion]
+      early skip of rewriting module: pydantic_core.core_schema [assertion]
+      early skip of rewriting module: pydantic.errors [assertion]
+      early skip of rewriting module: typing_inspection [assertion]
+      early skip of rewriting module: typing_inspection.introspection [assertion]
+      early skip of rewriting module: typing_inspection.typing_objects [assertion]
+      early skip of rewriting module: pydantic._internal [assertion]
+      early skip of rewriting module: pydantic._internal._repr [assertion]
+      early skip of rewriting module: pydantic._internal._typing_extra [assertion]
+      early skip of rewriting module: pydantic._internal._namespace_utils [assertion]
+      early skip of rewriting module: pydantic.main [assertion]
+      early skip of rewriting module: pydantic._internal._config [assertion]
+      early skip of rewriting module: pydantic.aliases [assertion]
+      early skip of rewriting module: pydantic._internal._internal_dataclass [assertion]
+      early skip of rewriting module: pydantic.config [assertion]
+      early skip of rewriting module: pydantic._internal._decorators [assertion]
+      early skip of rewriting module: pydantic._internal._core_utils [assertion]
+      early skip of rewriting module: pydantic._internal._utils [assertion]
+      early skip of rewriting module: pydantic._internal._import_utils [assertion]
+      early skip of rewriting module: pydantic._internal._fields [assertion]
+      early skip of rewriting module: pydantic._internal._generics [assertion]
+      early skip of rewriting module: pydantic._internal._forward_ref [assertion]
+      early skip of rewriting module: pydantic._internal._docs_extraction [assertion]
+      early skip of rewriting module: pydantic._internal._mock_val_ser [assertion]
+      early skip of rewriting module: pydantic.plugin [assertion]
+      early skip of rewriting module: pydantic.plugin._schema_validator [assertion]
+      early skip of rewriting module: pydantic._internal._model_construction [assertion]
+      early skip of rewriting module: pydantic._internal._generate_schema [assertion]
+      early skip of rewriting module: fractions [assertion]
+      early skip of rewriting module: zoneinfo [assertion]
+      early skip of rewriting module: zoneinfo._tzpath [assertion]
+      early skip of rewriting module: sysconfig [assertion]
+      early skip of rewriting module: _sysconfigdata__x86_64-linux-gnu [assertion]
+      early skip of rewriting module: zoneinfo._common [assertion]
+      early skip of rewriting module: _zoneinfo [assertion]
+      early skip of rewriting module: pydantic.annotated_handlers [assertion]
+      early skip of rewriting module: pydantic.functional_validators [assertion]
+      early skip of rewriting module: pydantic.json_schema [assertion]
+      early skip of rewriting module: pydantic._internal._core_metadata [assertion]
+      early skip of rewriting module: pydantic._internal._schema_generation_shared [assertion]
+      early skip of rewriting module: pydantic._internal._discriminated_union [assertion]
+      early skip of rewriting module: pydantic._internal._known_annotated_metadata [assertion]
+      early skip of rewriting module: pydantic._internal._schema_gather [assertion]
+      early skip of rewriting module: pydantic._internal._signature [assertion]
+      early skip of rewriting module: pydantic.fields [assertion]
+      early skip of rewriting module: annotated_types [assertion]
+      early skip of rewriting module: pydantic._internal._validators [assertion]
+      early skip of rewriting module: pydantic.types [assertion]
+      early skip of rewriting module: pydantic.plugin._loader [assertion]
+      early skip of rewriting module: schemas.render_plan [assertion]
+      early skip of rewriting module: renderer.preview_local [assertion]
+      early skip of rewriting module: schemas.render_output [assertion]
+      early skip of rewriting module: renderer.captions [assertion]
+      early skip of rewriting module: renderer.ffmpeg_runner [assertion]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: annotations
+            obj: _Feature((3, 7, 0, 'beta', 1), None, 16777216)
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: @py_builtins
+            obj: <module 'builtins' (built-in)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: @pytest_ar
+            obj: <module '_pytest.assertion.rewrite' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/assertion/rewrite.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: pytest
+            obj: <module 'pytest' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/pytest/__init__.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: Path
+            obj: <class 'pathlib.Path'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: TOOLS_ROOT
+            obj: /home/tnnd/data/code/video-agent/tools
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: sys
+            obj: <module 'sys' (built-in)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: AssetManifest
+            obj: <class 'schemas.asset_manifest.AssetManifest'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: Shot
+            obj: <class 'schemas.asset_manifest.Shot'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: VisualAsset
+            obj: <class 'schemas.asset_manifest.VisualAsset'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: FallbackConfig
+            obj: <class 'schemas.render_plan.FallbackConfig'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: RenderPlan
+            obj: <class 'schemas.render_plan.RenderPlan'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: Resolution
+            obj: <class 'schemas.render_plan.Resolution'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: PreviewRenderer
+            obj: <class 'renderer.preview_local.PreviewRenderer'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: _TIMING
+            obj: sha256:test-timing-lock-abc123
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: _make_manifest
+            obj: <function _make_manifest at 0x7a543468b740>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: _make_plan
+            obj: <function _make_plan at 0x7a543338ed40>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: TestDryRun
+            obj: <class 'tools.tests.unit.test_preview_local.TestDryRun'>
+        finish pytest_pycollect_makeitem --> [<Class TestDryRun>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: TestNonRegression
+            obj: <class 'tools.tests.unit.test_preview_local.TestNonRegression'>
+        finish pytest_pycollect_makeitem --> [<Class TestNonRegression>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: TestFromFiles
+            obj: <class 'tools.tests.unit.test_preview_local.TestFromFiles'>
+        finish pytest_pycollect_makeitem --> [<Class TestFromFiles>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: TestVerifyMode
+            obj: <class 'tools.tests.unit.test_preview_local.TestVerifyMode'>
+        finish pytest_pycollect_makeitem --> [<Class TestVerifyMode>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_preview_local.py>
+            name: TestHighProfile
+            obj: <class 'tools.tests.unit.test_preview_local.TestHighProfile'>
+        finish pytest_pycollect_makeitem --> [<Class TestHighProfile>] [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/unit/test_preview_local.py' lenresult=5 outcome='passed'> [hook]
+    genitems <Class TestDryRun> [collection]
+      pytest_collectstart [hook]
+          collector: <Class TestDryRun>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Class TestDryRun>
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestDryRun>
+            name: _ASSET_MANIFEST_REF
+            obj: file:///asset_manifest.json
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestDryRun>
+            name: dry_result
+            obj: <pytest_fixture(<function TestDryRun.dry_result at 0x7a54333c45e0>)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestDryRun>
+            name: test_render_plan_ref
+            obj: <function TestDryRun.test_render_plan_ref at 0x7a54333c4680>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e4830>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_render_plan_ref>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestDryRun>
+            name: test_asset_manifest_ref
+            obj: <function TestDryRun.test_asset_manifest_ref at 0x7a54333c4720>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e4830>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_asset_manifest_ref>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestDryRun>
+            name: test_video_uri_is_none
+            obj: <function TestDryRun.test_video_uri_is_none at 0x7a54333c47c0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e4830>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_video_uri_is_none>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestDryRun>
+            name: test_outputs_empty
+            obj: <function TestDryRun.test_outputs_empty at 0x7a54333c4860>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e4830>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_outputs_empty>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestDryRun>
+            name: test_effective_settings_present
+            obj: <function TestDryRun.test_effective_settings_present at 0x7a54333c4900>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e4830>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_effective_settings_present>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestDryRun>
+            name: test_only_json_written
+            obj: <function TestDryRun.test_only_json_written at 0x7a54333c49a0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e4830>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_only_json_written>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestDryRun>
+            name: test_inputs_digest_is_hex
+            obj: <function TestDryRun.test_inputs_digest_is_hex at 0x7a54333c4a40>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e4830>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_inputs_digest_is_hex>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestDryRun>
+            name: test_inputs_digest_pinned
+            obj: <function TestDryRun.test_inputs_digest_pinned at 0x7a54333c4ae0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e4830>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_inputs_digest_pinned>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestDryRun>
+            name: test_inputs_digest_determinism
+            obj: <function TestDryRun.test_inputs_digest_determinism at 0x7a54333c4b80>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e4830>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_inputs_digest_determinism>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestDryRun>
+            name: test_schema_metadata
+            obj: <function TestDryRun.test_schema_metadata at 0x7a54333c4c20>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e4830>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_schema_metadata>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestDryRun>
+            name: test_dry_run_json_bytes_deterministic
+            obj: <function TestDryRun.test_dry_run_json_bytes_deterministic at 0x7a54333c4cc0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e4830>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_dry_run_json_bytes_deterministic>] [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/unit/test_preview_local.py::TestDryRun' lenresult=11 outcome='passed'> [hook]
+    genitems <Function test_render_plan_ref> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_render_plan_ref>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_asset_manifest_ref> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_asset_manifest_ref>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_video_uri_is_none> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_video_uri_is_none>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_outputs_empty> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_outputs_empty>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_effective_settings_present> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_effective_settings_present>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_only_json_written> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_only_json_written>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_inputs_digest_is_hex> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_inputs_digest_is_hex>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_inputs_digest_pinned> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_inputs_digest_pinned>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_inputs_digest_determinism> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_inputs_digest_determinism>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_schema_metadata> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_schema_metadata>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_dry_run_json_bytes_deterministic> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_dry_run_json_bytes_deterministic>
+      finish pytest_itemcollected --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/unit/test_preview_local.py::TestDryRun' lenresult=11 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+    genitems <Class TestNonRegression> [collection]
+      pytest_collectstart [hook]
+          collector: <Class TestNonRegression>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Class TestNonRegression>
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestNonRegression>
+            name: minimal_render
+            obj: <pytest_fixture(<function TestNonRegression.minimal_render at 0x7a54333c4d60>)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestNonRegression>
+            name: test_mp4_sha256_unchanged
+            obj: <function TestNonRegression.test_mp4_sha256_unchanged at 0x7a54333c4e00>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e65d0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_mp4_sha256_unchanged>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestNonRegression>
+            name: test_srt_sha256_unchanged
+            obj: <function TestNonRegression.test_srt_sha256_unchanged at 0x7a54333c4ea0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e65d0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_srt_sha256_unchanged>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestNonRegression>
+            name: test_inputs_digest_present_in_full_render
+            obj: <function TestNonRegression.test_inputs_digest_present_in_full_render at 0x7a54333c4f40>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e65d0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_inputs_digest_present_in_full_render>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestNonRegression>
+            name: pytestmark
+            obj: [Mark(name='slow', args=(), kwargs={})]
+        finish pytest_pycollect_makeitem --> None [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/unit/test_preview_local.py::TestNonRegression' lenresult=3 outcome='passed'> [hook]
+    genitems <Function test_mp4_sha256_unchanged> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_mp4_sha256_unchanged>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_srt_sha256_unchanged> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_srt_sha256_unchanged>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_inputs_digest_present_in_full_render> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_inputs_digest_present_in_full_render>
+      finish pytest_itemcollected --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/unit/test_preview_local.py::TestNonRegression' lenresult=3 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+    genitems <Class TestFromFiles> [collection]
+      pytest_collectstart [hook]
+          collector: <Class TestFromFiles>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Class TestFromFiles>
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestFromFiles>
+            name: test_missing_manifest_raises
+            obj: <function TestFromFiles.test_missing_manifest_raises at 0x7a54333c4fe0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e70e0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_missing_manifest_raises>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestFromFiles>
+            name: test_missing_plan_raises
+            obj: <function TestFromFiles.test_missing_plan_raises at 0x7a54333c5080>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e70e0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_missing_plan_raises>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestFromFiles>
+            name: test_valid_files_produces_renderer
+            obj: <function TestFromFiles.test_valid_files_produces_renderer at 0x7a54333c5120>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e70e0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_valid_files_produces_renderer>] [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/unit/test_preview_local.py::TestFromFiles' lenresult=3 outcome='passed'> [hook]
+    genitems <Function test_missing_manifest_raises> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_missing_manifest_raises>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_missing_plan_raises> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_missing_plan_raises>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_valid_files_produces_renderer> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_valid_files_produces_renderer>
+      finish pytest_itemcollected --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/unit/test_preview_local.py::TestFromFiles' lenresult=3 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+    genitems <Class TestVerifyMode> [collection]
+      pytest_collectstart [hook]
+          collector: <Class TestVerifyMode>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Class TestVerifyMode>
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestVerifyMode>
+            name: _need_ffmpeg
+            obj: <pytest_fixture(<function TestVerifyMode._need_ffmpeg at 0x7a54333c51c0>)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestVerifyMode>
+            name: verify_result
+            obj: <pytest_fixture(<function TestVerifyMode.verify_result at 0x7a54333c5260>)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestVerifyMode>
+            name: test_fingerprint_file_written
+            obj: <function TestVerifyMode.test_fingerprint_file_written at 0x7a54333c5300>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e7cb0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_fingerprint_file_written>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestVerifyMode>
+            name: test_mp4_and_srt_written
+            obj: <function TestVerifyMode.test_mp4_and_srt_written at 0x7a54333c53a0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e7cb0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_mp4_and_srt_written>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestVerifyMode>
+            name: test_inputs_digest_pinned
+            obj: <function TestVerifyMode.test_inputs_digest_pinned at 0x7a54333c5440>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e7cb0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_inputs_digest_pinned>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestVerifyMode>
+            name: test_srt_sha256_pinned
+            obj: <function TestVerifyMode.test_srt_sha256_pinned at 0x7a54333c54e0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e7cb0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_srt_sha256_pinned>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestVerifyMode>
+            name: test_mp4_sha256_pinned
+            obj: <function TestVerifyMode.test_mp4_sha256_pinned at 0x7a54333c5580>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e7cb0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_mp4_sha256_pinned>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestVerifyMode>
+            name: test_frame_count
+            obj: <function TestVerifyMode.test_frame_count at 0x7a54333c5620>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e7cb0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_frame_count>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestVerifyMode>
+            name: test_no_timestamp_in_fingerprint_json
+            obj: <function TestVerifyMode.test_no_timestamp_in_fingerprint_json at 0x7a54333c56c0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e7cb0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_no_timestamp_in_fingerprint_json>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestVerifyMode>
+            name: test_fingerprint_json_bytes_deterministic
+            obj: <function TestVerifyMode.test_fingerprint_json_bytes_deterministic at 0x7a54333c5760>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54333e7cb0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_fingerprint_json_bytes_deterministic>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestVerifyMode>
+            name: pytestmark
+            obj: [Mark(name='slow', args=(), kwargs={})]
+        finish pytest_pycollect_makeitem --> None [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/unit/test_preview_local.py::TestVerifyMode' lenresult=8 outcome='passed'> [hook]
+    genitems <Function test_fingerprint_file_written> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_fingerprint_file_written>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_mp4_and_srt_written> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_mp4_and_srt_written>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_inputs_digest_pinned> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_inputs_digest_pinned>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_srt_sha256_pinned> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_srt_sha256_pinned>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_mp4_sha256_pinned> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_mp4_sha256_pinned>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_frame_count> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_frame_count>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_no_timestamp_in_fingerprint_json> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_no_timestamp_in_fingerprint_json>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_fingerprint_json_bytes_deterministic> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_fingerprint_json_bytes_deterministic>
+      finish pytest_itemcollected --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/unit/test_preview_local.py::TestVerifyMode' lenresult=8 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+    genitems <Class TestHighProfile> [collection]
+      pytest_collectstart [hook]
+          collector: <Class TestHighProfile>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Class TestHighProfile>
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestHighProfile>
+            name: _need_ffmpeg
+            obj: <pytest_fixture(<function TestHighProfile._need_ffmpeg at 0x7a54333c5800>)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestHighProfile>
+            name: high_result
+            obj: <pytest_fixture(<function TestHighProfile.high_result at 0x7a54333c58a0>)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestHighProfile>
+            name: test_inputs_digest_pinned
+            obj: <function TestHighProfile.test_inputs_digest_pinned at 0x7a54333c5940>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54332081d0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_inputs_digest_pinned>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestHighProfile>
+            name: test_mp4_sha256_pinned
+            obj: <function TestHighProfile.test_mp4_sha256_pinned at 0x7a54333c59e0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54332081d0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_mp4_sha256_pinned>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestHighProfile>
+            name: test_srt_sha256_pinned
+            obj: <function TestHighProfile.test_srt_sha256_pinned at 0x7a54333c5a80>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54332081d0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_srt_sha256_pinned>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestHighProfile>
+            name: test_fingerprint_json_bytes_deterministic
+            obj: <function TestHighProfile.test_fingerprint_json_bytes_deterministic at 0x7a54333c5b20>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54332081d0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_fingerprint_json_bytes_deterministic>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestHighProfile>
+            name: test_mp4_differs_from_preview
+            obj: <function TestHighProfile.test_mp4_differs_from_preview at 0x7a54333c5bc0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54332081d0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_mp4_differs_from_preview>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestHighProfile>
+            name: test_effective_settings_fields
+            obj: <function TestHighProfile.test_effective_settings_fields at 0x7a54333c5c60>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54332081d0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_effective_settings_fields>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestHighProfile>
+            name: pytestmark
+            obj: [Mark(name='slow', args=(), kwargs={})]
+        finish pytest_pycollect_makeitem --> None [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/unit/test_preview_local.py::TestHighProfile' lenresult=6 outcome='passed'> [hook]
+    genitems <Function test_inputs_digest_pinned> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_inputs_digest_pinned>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_mp4_sha256_pinned> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_mp4_sha256_pinned>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_srt_sha256_pinned> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_srt_sha256_pinned>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_fingerprint_json_bytes_deterministic> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_fingerprint_json_bytes_deterministic>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_mp4_differs_from_preview> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_mp4_differs_from_preview>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_effective_settings_fields> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_effective_settings_fields>
+      finish pytest_itemcollected --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/unit/test_preview_local.py::TestHighProfile' lenresult=6 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/unit/test_preview_local.py' lenresult=5 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+    genitems <Module test_schemas.py> [collection]
+      pytest_collectstart [hook]
+          collector: <Module test_schemas.py>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Module test_schemas.py>
+      find_module called for: tools.tests.unit.test_schemas [assertion]
+      matched test file '/home/tnnd/data/code/video-agent/tools/tests/unit/test_schemas.py' [assertion]
+      found cached rewritten pyc for /home/tnnd/data/code/video-agent/tools/tests/unit/test_schemas.py [assertion]
+      early skip of rewriting module: verify_contracts [assertion]
+      early skip of rewriting module: jsonschema [assertion]
+      early skip of rewriting module: jsonschema._format [assertion]
+      early skip of rewriting module: jsonschema.exceptions [assertion]
+      early skip of rewriting module: attrs [assertion]
+      early skip of rewriting module: attr [assertion]
+      early skip of rewriting module: attr.converters [assertion]
+      early skip of rewriting module: attr._compat [assertion]
+      early skip of rewriting module: attr._make [assertion]
+      early skip of rewriting module: attr._config [assertion]
+      early skip of rewriting module: attr.setters [assertion]
+      early skip of rewriting module: attr.exceptions [assertion]
+      early skip of rewriting module: attr.filters [assertion]
+      early skip of rewriting module: attr.validators [assertion]
+      early skip of rewriting module: attr._cmp [assertion]
+      early skip of rewriting module: attr._funcs [assertion]
+      early skip of rewriting module: attr._next_gen [assertion]
+      early skip of rewriting module: attr._version_info [assertion]
+      early skip of rewriting module: attrs.converters [assertion]
+      early skip of rewriting module: attrs.exceptions [assertion]
+      early skip of rewriting module: attrs.filters [assertion]
+      early skip of rewriting module: attrs.setters [assertion]
+      early skip of rewriting module: attrs.validators [assertion]
+      early skip of rewriting module: referencing [assertion]
+      early skip of rewriting module: referencing._core [assertion]
+      early skip of rewriting module: rpds [assertion]
+      early skip of rewriting module: rpds.rpds [assertion]
+      early skip of rewriting module: referencing.exceptions [assertion]
+      early skip of rewriting module: referencing._attrs [assertion]
+      early skip of rewriting module: referencing.typing [assertion]
+      early skip of rewriting module: jsonschema._utils [assertion]
+      early skip of rewriting module: fqdn [assertion]
+      early skip of rewriting module: idna [assertion]
+      early skip of rewriting module: idna.core [assertion]
+      early skip of rewriting module: idna.idnadata [assertion]
+      early skip of rewriting module: idna.intranges [assertion]
+      early skip of rewriting module: idna.package_data [assertion]
+      early skip of rewriting module: rfc3987 [assertion]
+      early skip of rewriting module: rfc3986_validator [assertion]
+      early skip of rewriting module: rfc3987_syntax [assertion]
+      early skip of rewriting module: rfc3339_validator [assertion]
+      early skip of rewriting module: webcolors [assertion]
+      early skip of rewriting module: jsonpointer [assertion]
+      early skip of rewriting module: uri_template [assertion]
+      early skip of rewriting module: isoduration [assertion]
+      early skip of rewriting module: jsonschema._types [assertion]
+      early skip of rewriting module: jsonschema.validators [assertion]
+      early skip of rewriting module: jsonschema_specifications [assertion]
+      early skip of rewriting module: referencing.jsonschema [assertion]
+      early skip of rewriting module: jsonschema_specifications._core [assertion]
+      early skip of rewriting module: importlib.readers [assertion]
+      early skip of rewriting module: jsonschema._keywords [assertion]
+      early skip of rewriting module: jsonschema._legacy_keywords [assertion]
+      early skip of rewriting module: jsonschema._typing [assertion]
+      early skip of rewriting module: jsonschema.protocols [assertion]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: annotations
+            obj: _Feature((3, 7, 0, 'beta', 1), None, 16777216)
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: @py_builtins
+            obj: <module 'builtins' (built-in)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: @pytest_ar
+            obj: <module '_pytest.assertion.rewrite' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/_pytest/assertion/rewrite.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: json
+            obj: <module 'json' from '/usr/lib/python3.12/json/__init__.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: Path
+            obj: <class 'pathlib.Path'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: pytest
+            obj: <module 'pytest' from '/home/tnnd/.virtualenvs/video/lib/python3.12/site-packages/pytest/__init__.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: ValidationError
+            obj: <class 'pydantic_core._pydantic_core.ValidationError'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: check_schema
+            obj: <function check_schema at 0x7a5435070cc0>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: _CONTRACTS_DIR
+            obj: /home/tnnd/data/code/video-agent/third_party/contracts
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: _SCHEMAS_DIR
+            obj: /home/tnnd/data/code/video-agent/third_party/contracts/schemas
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: _GOLDENS_DIR
+            obj: /home/tnnd/data/code/video-agent/third_party/contracts/goldens
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: AssetManifest
+            obj: <class 'schemas.asset_manifest.AssetManifest'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: Shot
+            obj: <class 'schemas.asset_manifest.Shot'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: VisualAsset
+            obj: <class 'schemas.asset_manifest.VisualAsset'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: VOLine
+            obj: <class 'schemas.asset_manifest.VOLine'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: SFXItem
+            obj: <class 'schemas.asset_manifest.SFXItem'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: FallbackConfig
+            obj: <class 'schemas.render_plan.FallbackConfig'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: RenderPlan
+            obj: <class 'schemas.render_plan.RenderPlan'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: Resolution
+            obj: <class 'schemas.render_plan.Resolution'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: Lineage
+            obj: <class 'schemas.render_output.Lineage'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: OutputHashes
+            obj: <class 'schemas.render_output.OutputHashes'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: Producer
+            obj: <class 'schemas.render_output.Producer'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: Provenance
+            obj: <class 'schemas.render_output.Provenance'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: RenderFingerprint
+            obj: <class 'schemas.render_output.RenderFingerprint'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: RenderOutput
+            obj: <class 'schemas.render_output.RenderOutput'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: TestAssetManifest
+            obj: <class 'tools.tests.unit.test_schemas.TestAssetManifest'>
+        finish pytest_pycollect_makeitem --> [<Class TestAssetManifest>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: TestRenderPlan
+            obj: <class 'tools.tests.unit.test_schemas.TestRenderPlan'>
+        finish pytest_pycollect_makeitem --> [<Class TestRenderPlan>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: TestRenderOutput
+            obj: <class 'tools.tests.unit.test_schemas.TestRenderOutput'>
+        finish pytest_pycollect_makeitem --> [<Class TestRenderOutput>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: TestCanonicalJsonHash
+            obj: <class 'tools.tests.unit.test_schemas.TestCanonicalJsonHash'>
+        finish pytest_pycollect_makeitem --> [<Class TestCanonicalJsonHash>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: TestRenderFingerprint
+            obj: <class 'tools.tests.unit.test_schemas.TestRenderFingerprint'>
+        finish pytest_pycollect_makeitem --> [<Class TestRenderFingerprint>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_schemas.py>
+            name: TestContractSchemaCompliance
+            obj: <class 'tools.tests.unit.test_schemas.TestContractSchemaCompliance'>
+        finish pytest_pycollect_makeitem --> [<Class TestContractSchemaCompliance>] [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/unit/test_schemas.py' lenresult=6 outcome='passed'> [hook]
+    genitems <Class TestAssetManifest> [collection]
+      pytest_collectstart [hook]
+          collector: <Class TestAssetManifest>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Class TestAssetManifest>
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestAssetManifest>
+            name: test_minimal_valid
+            obj: <function TestAssetManifest.test_minimal_valid at 0x7a54334e7420>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54332ef6b0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_minimal_valid>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestAssetManifest>
+            name: test_roundtrip_json
+            obj: <function TestAssetManifest.test_roundtrip_json at 0x7a54330e49a0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1b20>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_roundtrip_json>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestAssetManifest>
+            name: test_missing_manifest_id_raises
+            obj: <function TestAssetManifest.test_missing_manifest_id_raises at 0x7a54330e4a40>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1b20>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_missing_manifest_id_raises>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestAssetManifest>
+            name: test_missing_timing_lock_hash_raises
+            obj: <function TestAssetManifest.test_missing_timing_lock_hash_raises at 0x7a54330e4ae0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1b20>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_missing_timing_lock_hash_raises>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestAssetManifest>
+            name: test_shot_duration_ms_required
+            obj: <function TestAssetManifest.test_shot_duration_ms_required at 0x7a54330e4b80>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1b20>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_shot_duration_ms_required>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestAssetManifest>
+            name: test_visual_asset_null_uri_accepted
+            obj: <function TestAssetManifest.test_visual_asset_null_uri_accepted at 0x7a54330e4c20>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1b20>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_visual_asset_null_uri_accepted>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestAssetManifest>
+            name: test_vo_line_zero_timing_accepted
+            obj: <function TestAssetManifest.test_vo_line_zero_timing_accepted at 0x7a54330e4cc0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1b20>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_vo_line_zero_timing_accepted>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestAssetManifest>
+            name: test_vo_line_field_names
+            obj: <function TestAssetManifest.test_vo_line_field_names at 0x7a54330e4d60>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1b20>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_vo_line_field_names>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestAssetManifest>
+            name: test_sfx_item
+            obj: <function TestAssetManifest.test_sfx_item at 0x7a54330e4e00>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1b20>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_sfx_item>] [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/unit/test_schemas.py::TestAssetManifest' lenresult=9 outcome='passed'> [hook]
+    genitems <Function test_minimal_valid> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_minimal_valid>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_roundtrip_json> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_roundtrip_json>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_missing_manifest_id_raises> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_missing_manifest_id_raises>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_missing_timing_lock_hash_raises> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_missing_timing_lock_hash_raises>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_shot_duration_ms_required> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_shot_duration_ms_required>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_visual_asset_null_uri_accepted> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_visual_asset_null_uri_accepted>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_vo_line_zero_timing_accepted> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_vo_line_zero_timing_accepted>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_vo_line_field_names> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_vo_line_field_names>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_sfx_item> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_sfx_item>
+      finish pytest_itemcollected --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/unit/test_schemas.py::TestAssetManifest' lenresult=9 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+    genitems <Class TestRenderPlan> [collection]
+      pytest_collectstart [hook]
+          collector: <Class TestRenderPlan>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Class TestRenderPlan>
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderPlan>
+            name: test_minimal_valid
+            obj: <function TestRenderPlan.test_minimal_valid at 0x7a54330e4ea0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1b20>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_minimal_valid>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderPlan>
+            name: test_roundtrip_json
+            obj: <function TestRenderPlan.test_roundtrip_json at 0x7a54330e4f40>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1b20>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_roundtrip_json>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderPlan>
+            name: test_missing_timing_lock_hash_raises
+            obj: <function TestRenderPlan.test_missing_timing_lock_hash_raises at 0x7a54330e4fe0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1b20>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_missing_timing_lock_hash_raises>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderPlan>
+            name: test_resolution_defaults
+            obj: <function TestRenderPlan.test_resolution_defaults at 0x7a54330e5080>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1b20>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_resolution_defaults>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderPlan>
+            name: test_fallback_defaults
+            obj: <function TestRenderPlan.test_fallback_defaults at 0x7a54330e5120>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a543309e420>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_fallback_defaults>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderPlan>
+            name: test_asset_resolutions_is_dict
+            obj: <function TestRenderPlan.test_asset_resolutions_is_dict at 0x7a54330e51c0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1310>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_asset_resolutions_is_dict>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderPlan>
+            name: test_canonical_field_names
+            obj: <function TestRenderPlan.test_canonical_field_names at 0x7a54330e5260>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1310>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_canonical_field_names>] [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/unit/test_schemas.py::TestRenderPlan' lenresult=7 outcome='passed'> [hook]
+    genitems <Function test_minimal_valid> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_minimal_valid>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_roundtrip_json> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_roundtrip_json>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_missing_timing_lock_hash_raises> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_missing_timing_lock_hash_raises>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_resolution_defaults> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_resolution_defaults>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_fallback_defaults> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_fallback_defaults>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_asset_resolutions_is_dict> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_asset_resolutions_is_dict>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_canonical_field_names> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_canonical_field_names>
+      finish pytest_itemcollected --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/unit/test_schemas.py::TestRenderPlan' lenresult=7 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+    genitems <Class TestRenderOutput> [collection]
+      pytest_collectstart [hook]
+          collector: <Class TestRenderOutput>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Class TestRenderOutput>
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderOutput>
+            name: _make_valid
+            obj: <function TestRenderOutput._make_valid at 0x7a54330e5300>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderOutput>
+            name: test_valid
+            obj: <function TestRenderOutput.test_valid at 0x7a54330e53a0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1700>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_valid>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderOutput>
+            name: test_producer_defaults
+            obj: <function TestRenderOutput.test_producer_defaults at 0x7a54330e5440>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1700>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_producer_defaults>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderOutput>
+            name: test_schema_id_default
+            obj: <function TestRenderOutput.test_schema_id_default at 0x7a54330e54e0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1700>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_schema_id_default>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderOutput>
+            name: test_roundtrip_json
+            obj: <function TestRenderOutput.test_roundtrip_json at 0x7a54330e5580>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1700>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_roundtrip_json>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderOutput>
+            name: test_missing_video_uri_defaults_to_none
+            obj: <function TestRenderOutput.test_missing_video_uri_defaults_to_none at 0x7a54330e5620>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1700>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_missing_video_uri_defaults_to_none>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderOutput>
+            name: test_canonical_field_names
+            obj: <function TestRenderOutput.test_canonical_field_names at 0x7a54330e56c0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1700>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_canonical_field_names>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderOutput>
+            name: test_audio_stems_optional
+            obj: <function TestRenderOutput.test_audio_stems_optional at 0x7a54330e5760>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c1700>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_audio_stems_optional>] [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/unit/test_schemas.py::TestRenderOutput' lenresult=7 outcome='passed'> [hook]
+    genitems <Function test_valid> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_valid>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_producer_defaults> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_producer_defaults>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_schema_id_default> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_schema_id_default>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_roundtrip_json> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_roundtrip_json>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_missing_video_uri_defaults_to_none> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_missing_video_uri_defaults_to_none>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_canonical_field_names> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_canonical_field_names>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_audio_stems_optional> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_audio_stems_optional>
+      finish pytest_itemcollected --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/unit/test_schemas.py::TestRenderOutput' lenresult=7 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+    genitems <Class TestCanonicalJsonHash> [collection]
+      pytest_collectstart [hook]
+          collector: <Class TestCanonicalJsonHash>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Class TestCanonicalJsonHash>
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestCanonicalJsonHash>
+            name: _manifest
+            obj: <function TestCanonicalJsonHash._manifest at 0x7a54330e5800>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestCanonicalJsonHash>
+            name: test_same_object_same_hash_repeated
+            obj: <function TestCanonicalJsonHash.test_same_object_same_hash_repeated at 0x7a54330e58a0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c33e0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_same_object_same_hash_repeated>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestCanonicalJsonHash>
+            name: test_same_plan_same_hash_repeated
+            obj: <function TestCanonicalJsonHash.test_same_plan_same_hash_repeated at 0x7a54330e5940>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c33e0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_same_plan_same_hash_repeated>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestCanonicalJsonHash>
+            name: test_distinct_objects_distinct_hashes
+            obj: <function TestCanonicalJsonHash.test_distinct_objects_distinct_hashes at 0x7a54330e59e0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c33e0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_distinct_objects_distinct_hashes>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestCanonicalJsonHash>
+            name: test_canonical_json_is_sorted_keys
+            obj: <function TestCanonicalJsonHash.test_canonical_json_is_sorted_keys at 0x7a54330e5a80>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c33e0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_canonical_json_is_sorted_keys>] [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/unit/test_schemas.py::TestCanonicalJsonHash' lenresult=4 outcome='passed'> [hook]
+    genitems <Function test_same_object_same_hash_repeated> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_same_object_same_hash_repeated>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_same_plan_same_hash_repeated> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_same_plan_same_hash_repeated>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_distinct_objects_distinct_hashes> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_distinct_objects_distinct_hashes>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_canonical_json_is_sorted_keys> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_canonical_json_is_sorted_keys>
+      finish pytest_itemcollected --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/unit/test_schemas.py::TestCanonicalJsonHash' lenresult=4 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+    genitems <Class TestRenderFingerprint> [collection]
+      pytest_collectstart [hook]
+          collector: <Class TestRenderFingerprint>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Class TestRenderFingerprint>
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderFingerprint>
+            name: _make_fp
+            obj: <function TestRenderFingerprint._make_fp at 0x7a54330e5b20>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderFingerprint>
+            name: test_valid
+            obj: <function TestRenderFingerprint.test_valid at 0x7a54330e5bc0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330e2d80>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_valid>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderFingerprint>
+            name: test_roundtrip_json
+            obj: <function TestRenderFingerprint.test_roundtrip_json at 0x7a54330e5c60>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330e2d80>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_roundtrip_json>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderFingerprint>
+            name: test_no_timestamp_fields
+            obj: <function TestRenderFingerprint.test_no_timestamp_fields at 0x7a54330e5d00>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c2480>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_no_timestamp_fields>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestRenderFingerprint>
+            name: test_frame_hashes_list
+            obj: <function TestRenderFingerprint.test_frame_hashes_list at 0x7a54330e5da0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c2480>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_frame_hashes_list>] [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/unit/test_schemas.py::TestRenderFingerprint' lenresult=4 outcome='passed'> [hook]
+    genitems <Function test_valid> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_valid>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_roundtrip_json> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_roundtrip_json>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_no_timestamp_fields> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_no_timestamp_fields>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_frame_hashes_list> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_frame_hashes_list>
+      finish pytest_itemcollected --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/unit/test_schemas.py::TestRenderFingerprint' lenresult=4 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+    genitems <Class TestContractSchemaCompliance> [collection]
+      pytest_collectstart [hook]
+          collector: <Class TestContractSchemaCompliance>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Class TestContractSchemaCompliance>
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestContractSchemaCompliance>
+            name: _load_golden
+            obj: <staticmethod(<function TestContractSchemaCompliance._load_golden at 0x7a54330e5e40>)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestContractSchemaCompliance>
+            name: _assert_valid
+            obj: <staticmethod(<function TestContractSchemaCompliance._assert_valid at 0x7a54330e5ee0>)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestContractSchemaCompliance>
+            name: test_golden_asset_manifest_final_passes_schema
+            obj: <function TestContractSchemaCompliance.test_golden_asset_manifest_final_passes_schema at 0x7a54330e5f80>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c3bc0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_golden_asset_manifest_final_passes_schema>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestContractSchemaCompliance>
+            name: test_golden_render_plan_passes_schema
+            obj: <function TestContractSchemaCompliance.test_golden_render_plan_passes_schema at 0x7a54330e6020>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c3bc0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_golden_render_plan_passes_schema>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestContractSchemaCompliance>
+            name: test_golden_render_output_passes_schema
+            obj: <function TestContractSchemaCompliance.test_golden_render_output_passes_schema at 0x7a54330e60c0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c3bc0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_golden_render_output_passes_schema>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestContractSchemaCompliance>
+            name: test_minimal_golden_asset_manifest_final_passes_schema
+            obj: <function TestContractSchemaCompliance.test_minimal_golden_asset_manifest_final_passes_schema at 0x7a54330e6160>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c3bc0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_minimal_golden_asset_manifest_final_passes_schema>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestContractSchemaCompliance>
+            name: test_minimal_golden_render_plan_passes_schema
+            obj: <function TestContractSchemaCompliance.test_minimal_golden_render_plan_passes_schema at 0x7a54330e6200>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c3bc0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_minimal_golden_render_plan_passes_schema>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestContractSchemaCompliance>
+            name: test_minimal_golden_render_output_passes_schema
+            obj: <function TestContractSchemaCompliance.test_minimal_golden_render_output_passes_schema at 0x7a54330e62a0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c3bc0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_minimal_golden_render_output_passes_schema>] [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Class TestContractSchemaCompliance>
+            name: test_render_output_model_produces_contract_valid_json
+            obj: <function TestContractSchemaCompliance.test_render_output_model_produces_contract_valid_json at 0x7a54330e6340>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x7a54330c3bc0>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_render_output_model_produces_contract_valid_json>] [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/unit/test_schemas.py::TestContractSchemaCompliance' lenresult=7 outcome='passed'> [hook]
+    genitems <Function test_golden_asset_manifest_final_passes_schema> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_golden_asset_manifest_final_passes_schema>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_golden_render_plan_passes_schema> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_golden_render_plan_passes_schema>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_golden_render_output_passes_schema> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_golden_render_output_passes_schema>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_minimal_golden_asset_manifest_final_passes_schema> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_minimal_golden_asset_manifest_final_passes_schema>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_minimal_golden_render_plan_passes_schema> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_minimal_golden_render_plan_passes_schema>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_minimal_golden_render_output_passes_schema> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_minimal_golden_render_output_passes_schema>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_render_output_model_produces_contract_valid_json> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_render_output_model_produces_contract_valid_json>
+      finish pytest_itemcollected --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/unit/test_schemas.py::TestContractSchemaCompliance' lenresult=7 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/unit/test_schemas.py' lenresult=6 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/unit' lenresult=3 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+      pytest_collection_modifyitems [hook]
+          session: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+          config: <_pytest.config.Config object at 0x7a54365d8860>
+          items: [<Function test_produces_png_at_output_path>, <Function test_correct_dimensions>, <Function test_deterministic_same_inputs>, <Function test_different_shot_ids_produce_different_labels>, <Function test_cache_dir_used_when_no_output_path>, <Function test_cached_result_returned_on_second_call>, <Function test_no_output_path_and_no_cache_dir_raises>, <Function test_invalid_color_falls_back_to_default>, <Function test_custom_label>, <Function test_render_plan_ref>, <Function test_asset_manifest_ref>, <Function test_video_uri_is_none>, <Function test_outputs_empty>, <Function test_effective_settings_present>, <Function test_only_json_written>, <Function test_inputs_digest_is_hex>, <Function test_inputs_digest_pinned>, <Function test_inputs_digest_determinism>, <Function test_schema_metadata>, <Function test_dry_run_json_bytes_deterministic>, <Function test_mp4_sha256_unchanged>, <Function test_srt_sha256_unchanged>, <Function test_inputs_digest_present_in_full_render>, <Function test_missing_manifest_raises>, <Function test_missing_plan_raises>, <Function test_valid_files_produces_renderer>, <Function test_fingerprint_file_written>, <Function test_mp4_and_srt_written>, <Function test_inputs_digest_pinned>, <Function test_srt_sha256_pinned>, <Function test_mp4_sha256_pinned>, <Function test_frame_count>, <Function test_no_timestamp_in_fingerprint_json>, <Function test_fingerprint_json_bytes_deterministic>, <Function test_inputs_digest_pinned>, <Function test_mp4_sha256_pinned>, <Function test_srt_sha256_pinned>, <Function test_fingerprint_json_bytes_deterministic>, <Function test_mp4_differs_from_preview>, <Function test_effective_settings_fields>, <Function test_minimal_valid>, <Function test_roundtrip_json>, <Function test_missing_manifest_id_raises>, <Function test_missing_timing_lock_hash_raises>, <Function test_shot_duration_ms_required>, <Function test_visual_asset_null_uri_accepted>, <Function test_vo_line_zero_timing_accepted>, <Function test_vo_line_field_names>, <Function test_sfx_item>, <Function test_minimal_valid>, <Function test_roundtrip_json>, <Function test_missing_timing_lock_hash_raises>, <Function test_resolution_defaults>, <Function test_fallback_defaults>, <Function test_asset_resolutions_is_dict>, <Function test_canonical_field_names>, <Function test_valid>, <Function test_producer_defaults>, <Function test_schema_id_default>, <Function test_roundtrip_json>, <Function test_missing_video_uri_defaults_to_none>, <Function test_canonical_field_names>, <Function test_audio_stems_optional>, <Function test_same_object_same_hash_repeated>, <Function test_same_plan_same_hash_repeated>, <Function test_distinct_objects_distinct_hashes>, <Function test_canonical_json_is_sorted_keys>, <Function test_valid>, <Function test_roundtrip_json>, <Function test_no_timestamp_fields>, <Function test_frame_hashes_list>, <Function test_golden_asset_manifest_final_passes_schema>, <Function test_golden_render_plan_passes_schema>, <Function test_golden_render_output_passes_schema>, <Function test_minimal_golden_asset_manifest_final_passes_schema>, <Function test_minimal_golden_render_plan_passes_schema>, <Function test_minimal_golden_render_output_passes_schema>, <Function test_render_output_model_produces_contract_valid_json>]
+      finish pytest_collection_modifyitems --> [] [hook]
+      pytest_collection_finish [hook]
+          session: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+        pytest_report_collectionfinish [hook]
+            config: <_pytest.config.Config object at 0x7a54365d8860>
+            items: [<Function test_produces_png_at_output_path>, <Function test_correct_dimensions>, <Function test_deterministic_same_inputs>, <Function test_different_shot_ids_produce_different_labels>, <Function test_cache_dir_used_when_no_output_path>, <Function test_cached_result_returned_on_second_call>, <Function test_no_output_path_and_no_cache_dir_raises>, <Function test_invalid_color_falls_back_to_default>, <Function test_custom_label>, <Function test_render_plan_ref>, <Function test_asset_manifest_ref>, <Function test_video_uri_is_none>, <Function test_outputs_empty>, <Function test_effective_settings_present>, <Function test_only_json_written>, <Function test_inputs_digest_is_hex>, <Function test_inputs_digest_pinned>, <Function test_inputs_digest_determinism>, <Function test_schema_metadata>, <Function test_dry_run_json_bytes_deterministic>, <Function test_mp4_sha256_unchanged>, <Function test_srt_sha256_unchanged>, <Function test_inputs_digest_present_in_full_render>, <Function test_missing_manifest_raises>, <Function test_missing_plan_raises>, <Function test_valid_files_produces_renderer>, <Function test_fingerprint_file_written>, <Function test_mp4_and_srt_written>, <Function test_inputs_digest_pinned>, <Function test_srt_sha256_pinned>, <Function test_mp4_sha256_pinned>, <Function test_frame_count>, <Function test_no_timestamp_in_fingerprint_json>, <Function test_fingerprint_json_bytes_deterministic>, <Function test_inputs_digest_pinned>, <Function test_mp4_sha256_pinned>, <Function test_srt_sha256_pinned>, <Function test_fingerprint_json_bytes_deterministic>, <Function test_mp4_differs_from_preview>, <Function test_effective_settings_fields>, <Function test_minimal_valid>, <Function test_roundtrip_json>, <Function test_missing_manifest_id_raises>, <Function test_missing_timing_lock_hash_raises>, <Function test_shot_duration_ms_required>, <Function test_visual_asset_null_uri_accepted>, <Function test_vo_line_zero_timing_accepted>, <Function test_vo_line_field_names>, <Function test_sfx_item>, <Function test_minimal_valid>, <Function test_roundtrip_json>, <Function test_missing_timing_lock_hash_raises>, <Function test_resolution_defaults>, <Function test_fallback_defaults>, <Function test_asset_resolutions_is_dict>, <Function test_canonical_field_names>, <Function test_valid>, <Function test_producer_defaults>, <Function test_schema_id_default>, <Function test_roundtrip_json>, <Function test_missing_video_uri_defaults_to_none>, <Function test_canonical_field_names>, <Function test_audio_stems_optional>, <Function test_same_object_same_hash_repeated>, <Function test_same_plan_same_hash_repeated>, <Function test_distinct_objects_distinct_hashes>, <Function test_canonical_json_is_sorted_keys>, <Function test_valid>, <Function test_roundtrip_json>, <Function test_no_timestamp_fields>, <Function test_frame_hashes_list>, <Function test_golden_asset_manifest_final_passes_schema>, <Function test_golden_render_plan_passes_schema>, <Function test_golden_render_output_passes_schema>, <Function test_minimal_golden_asset_manifest_final_passes_schema>, <Function test_minimal_golden_render_plan_passes_schema>, <Function test_minimal_golden_render_output_passes_schema>, <Function test_render_output_model_produces_contract_valid_json>]
+            start_path: /home/tnnd/data/code/video-agent
+            startdir: /home/tnnd/data/code/video-agent
+        finish pytest_report_collectionfinish --> [] [hook]
+      finish pytest_collection_finish --> [] [hook]
+    finish pytest_collection --> None [hook]
+    pytest_runtestloop [hook]
+        session: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=78>
+    finish pytest_runtestloop --> True [hook]
+    pytest_sessionfinish [hook]
+        session: <Session  exitstatus=0 testsfailed=0 testscollected=78>
+        exitstatus: 0
+      pytest_terminal_summary [hook]
+          terminalreporter: <_pytest.terminal.TerminalReporter object at 0x7a54347e1df0>
+          exitstatus: 0
+          config: <_pytest.config.Config object at 0x7a54365d8860>
+      finish pytest_terminal_summary --> [] [hook]
+    finish pytest_sessionfinish --> [] [hook]
+    pytest_unconfigure [hook]
+        config: <_pytest.config.Config object at 0x7a54365d8860>
+    finish pytest_unconfigure --> [] [hook]

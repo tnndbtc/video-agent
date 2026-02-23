@@ -1,0 +1,16 @@
+.git/
+node_modules/
+venv/
+.venv/
+__pycache__/
+dist/
+build/
+data/
+datasets/
+videos/
+media/
+outputs/
+logs/
+tmp/
+docker/
+

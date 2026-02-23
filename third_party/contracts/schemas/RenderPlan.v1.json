@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RenderPlan",
+  "type": "object",
+  "required": ["schema_id", "schema_version", "plan_id", "project_id", "manifest_ref", "timing_lock_hash", "profile", "resolution", "aspect_ratio", "fps", "resolved_assets"],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0.0"},
+    "plan_id": {"type": "string"},
+    "project_id": {"type": "string"},
+    "manifest_ref": {"type": "string"},
+    "timing_lock_hash": {"type": "string"},
+    "profile": {
+      "type": "string",
+      "enum": ["preview_local", "draft_720p", "final_1080p"]
+    },
+    "resolution": {"type": "string"},
+    "aspect_ratio": {"type": "string"},
+    "fps": {"type": "number"},
+    "resolved_assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["asset_id", "asset_type", "uri", "license_type", "is_placeholder"],
+        "additionalProperties": true,
+        "properties": {
+          "asset_id": {"type": "string"},
+          "asset_type": {"type": "string"},
+          "uri": {"type": "string"},
+          "license_type": {"type": "string"},
+          "is_placeholder": {"type": "boolean"}
+        }
+      }
+    }
+  }
+}

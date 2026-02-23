@@ -1,0 +1,1 @@
+{"artifacts":{},"bundle_hash":"0000000000000000000000000000000000000000000000000000000000000000","created_utc":"1970-01-01T00:00:00Z","episode_id":"episode-minimal","producer":{"component":"pipeline","repo":"orchestrator"},"run_id":"run-minimal","schema_id":"EpisodeBundle.v1","schema_version":"1.0.0","source_run_dir":"artifacts/run-minimal"}
