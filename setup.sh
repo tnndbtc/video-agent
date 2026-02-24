@@ -152,8 +152,9 @@ run_tests() {
     local _rc=0
 
     echo ""
-    print_info "── 1/2  Renderer tests (unit + golden + integration) ─────────────"
-    if $python_cmd -m pytest -q --tb=short; then
+    print_info "── 1/3  Renderer tests (unit + golden + integration) ─────────────"
+    if $python_cmd -m pytest -q --tb=short \
+        --ignore=tools/tests/integration/test_e2e_render_pipeline.py; then
         print_success "Renderer tests PASSED"
     else
         print_warning "Renderer tests FAILED"
@@ -161,11 +162,23 @@ run_tests() {
     fi
 
     echo ""
-    print_info "── 2/2  Contracts verifier ───────────────────────────────────────"
+    print_info "── 2/3  Contracts verifier ───────────────────────────────────────"
     if $python_cmd third_party/contracts/tools/verify_contracts.py; then
         print_success "Contracts verifier PASSED"
     else
         print_warning "Contracts verifier FAILED"
+        _rc=1
+    fi
+
+    echo ""
+    print_info "── 3/3  E2E render pipeline (final-format manifest + orchestrator plan)"
+    print_info "        Output → /tmp/video-agent-e2e-<timestamp>/  (deleted after run)"
+    if $python_cmd -m pytest \
+        tools/tests/integration/test_e2e_render_pipeline.py \
+        -v -s --tb=short; then
+        print_success "E2E render pipeline PASSED"
+    else
+        print_warning "E2E render pipeline FAILED"
         _rc=1
     fi
 
@@ -184,40 +197,42 @@ run_tests() {
 show_usage() {
     print_header "Usage — Render Video from JSON Inputs"
 
-    echo -e "${BOLD}Script:${NC}  scripts/render_from_orchestrator.py"
-    echo -e "${BOLD}Inputs:${NC}  AssetManifest.json  +  RenderPlan.json"
-    echo -e "${BOLD}Outputs:${NC} output.mp4, output.srt, render_output.json"
+    echo -e "${BOLD}Inputs:${NC}  AssetManifest.final.json  +  RenderPlan.json"
+    echo -e "${BOLD}Outputs:${NC} output.mp4, output.srt, RenderOutput.json"
     echo ""
 
-    echo -e "${CYAN}── Standard render ──────────────────────────────────────────────────${NC}"
+    echo -e "${CYAN}── Canonical render  (video render — §41.4) ─────────────────────────${NC}"
+    echo ""
+    echo -e "  video render \\"
+    echo -e "      --manifest /path/to/AssetManifest.final.json \\"
+    echo -e "      --plan     /path/to/RenderPlan.json \\"
+    echo -e "      --out      /tmp/out/RenderOutput.json \\"
+    echo -e "      --video    /tmp/out/output.mp4"
+    echo ""
+    echo -e "  ${YELLOW}Stdout:${NC} full RenderOutput JSON"
+    echo -e "  ${YELLOW}Stderr:${NC} error message on failure (exit code 1)"
+    echo -e "  ${YELLOW}--srt${NC}   optional; defaults to <video path>.srt"
+    echo ""
+
+    echo -e "${CYAN}── Dry run (validate + write RenderOutput only, no mp4/srt) ─────────${NC}"
+    echo ""
+    echo -e "  video render \\"
+    echo -e "      --manifest /path/to/AssetManifest.final.json \\"
+    echo -e "      --plan     /path/to/RenderPlan.json \\"
+    echo -e "      --out      /tmp/out/RenderOutput.json \\"
+    echo -e "      --video    /tmp/out/output.mp4 \\"
+    echo -e "      --dry-run"
+    echo ""
+
+    echo -e "${CYAN}── Legacy wrapper  (--out-dir interface) ────────────────────────────${NC}"
     echo ""
     echo -e "  python scripts/render_from_orchestrator.py \\"
     echo -e "      --asset-manifest /path/to/AssetManifest.json \\"
     echo -e "      --render-plan    /path/to/RenderPlan.json \\"
     echo -e "      --out-dir        /tmp/out"
     echo ""
-    echo -e "  ${YELLOW}Stdout:${NC} full RenderOutput JSON"
-    echo -e "  ${YELLOW}Stderr:${NC} error message on failure (exit code 1)"
-    echo ""
-
-    echo -e "${CYAN}── Dry run (validate inputs only, no mp4/srt produced) ──────────────${NC}"
-    echo ""
-    echo -e "  python scripts/render_from_orchestrator.py \\"
-    echo -e "      --asset-manifest /path/to/AssetManifest.json \\"
-    echo -e "      --render-plan    /path/to/RenderPlan.json \\"
-    echo -e "      --out-dir        /tmp/out \\"
-    echo -e "      --dry-run"
-    echo ""
-
-    echo -e "${CYAN}── Verify (dry-run + full render, emits render_fingerprint.json) ─────${NC}"
-    echo ""
-    echo -e "  python scripts/render_from_orchestrator.py \\"
-    echo -e "      --asset-manifest /path/to/AssetManifest.json \\"
-    echo -e "      --render-plan    /path/to/RenderPlan.json \\"
-    echo -e "      --out-dir        /tmp/out \\"
-    echo -e "      --verify"
-    echo ""
-    echo -e "  ${YELLOW}Note:${NC} --verify and --dry-run are mutually exclusive"
+    echo -e "  ${YELLOW}Note:${NC} delegates to 'video render' internally."
+    echo -e "         Also supports ${BOLD}--verify${NC} (emits render_fingerprint.json)."
     echo ""
 
     echo -e "${CYAN}── Accepted manifest formats ────────────────────────────────────────${NC}"

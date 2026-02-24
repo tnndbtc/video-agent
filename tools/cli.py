@@ -2,7 +2,12 @@
 """
 video — top-level renderer CLI (pip-installable entry point).
 
-Delegates to the same logic as scripts/video.py.
+Subcommands
+-----------
+  video render        Canonical pipeline render (§41.4 interface)
+  video verify        System determinism verification
+  video audit-render  Nondeterminism detector (render twice + diff)
+
 sys.path is patched so that the flat imports used by renderer/, schemas/,
 and tests/ resolve correctly from the installed package directory.
 """
@@ -18,13 +23,28 @@ _PKG_DIR = Path(__file__).resolve().parent
 if str(_PKG_DIR) not in sys.path:
     sys.path.insert(0, str(_PKG_DIR))
 
+# Contracts tools (verify_contracts module) live in third_party/contracts/tools/
+_REPO_ROOT = _PKG_DIR.parent
+_CONTRACTS_TOOLS = _REPO_ROOT / "third_party" / "contracts" / "tools"
+_CONTRACTS_SCHEMAS_DIR = _REPO_ROOT / "third_party" / "contracts" / "schemas"
+if str(_CONTRACTS_TOOLS) not in sys.path:
+    sys.path.insert(0, str(_CONTRACTS_TOOLS))
+
 import argparse
 import json
+import shutil
 import tempfile
 
 from tests._fixture_builders import build_minimal_verify_fixture
 from renderer.preview_local import PreviewRenderer
+from schemas.asset_manifest import AssetManifest, Shot, VisualAsset, VOLine
+from schemas.render_plan import RenderPlan, Resolution
 from schemas.render_output import RenderAudit
+from verify_contracts import check_schema
+
+# ---------------------------------------------------------------------------
+# Constants
+# ---------------------------------------------------------------------------
 
 _SKIP_RENDER_OUTPUT_FIELDS = frozenset({
     "rendered_at",
@@ -45,6 +65,278 @@ _CLI_TO_PLAN_PROFILE: dict[str, str] = {
     "high": "high",
 }
 
+# Fallback shot duration (ms) used when the manifest carries no timing data.
+_DEFAULT_SHOT_MS = 3_000
+
+# Stub-file threshold: file:// assets at or below this byte size are treated
+# as placeholder stubs (a 1×1 PNG is ~67 bytes; a RIFF header-only WAV is 44 bytes).
+_MIN_REAL_ASSET_BYTES = 100
+
+
+# =============================================================================
+# Shared helpers
+# (used by cmd_render here and imported by scripts/render_from_orchestrator.py)
+# =============================================================================
+
+def _validate_contract(data: dict, label: str) -> None:
+    """Validate *data* against its contract JSON schema (keyed by schema_id).
+
+    Exits with code 1 on validation failure.  Silently passes when schema_id is
+    absent — unknown/internal formats are not penalised.
+    """
+    schema_id = data.get("schema_id")
+    if not schema_id:
+        return
+    errors = check_schema(data, schema_id, _CONTRACTS_SCHEMAS_DIR)
+    if errors:
+        print(
+            f"Contract validation FAILED for {label} (schema_id={schema_id!r}):",
+            file=sys.stderr,
+        )
+        for err in errors:
+            print(f"  {err}", file=sys.stderr)
+        sys.exit(1)
+
+
+def _is_stub_file(uri: str) -> bool:
+    """Return True when a file:// URI points to a file too small to be real media."""
+    if not uri.startswith("file://"):
+        return False
+    try:
+        return Path(uri[len("file://"):]).stat().st_size <= _MIN_REAL_ASSET_BYTES
+    except OSError:
+        return False
+
+
+def _adapt_manifest(raw: dict, timing_lock_hash: str) -> AssetManifest:
+    """Translate orchestrator-draft AssetManifest JSON → renderer AssetManifest model.
+
+    Orchestrator layout: backgrounds[], character_packs[], vo_items[].
+    """
+    shots: list[Shot] = []
+    for bg in raw.get("backgrounds", []):
+        scene_id = bg["scene_id"]
+        visual_assets: list[VisualAsset] = [
+            VisualAsset(
+                asset_id=bg["bg_id"],
+                role="background",
+                placeholder=bg.get("is_placeholder", False),
+            )
+        ]
+        for cp in raw.get("character_packs", []):
+            visual_assets.append(
+                VisualAsset(
+                    asset_id=cp["pack_id"],
+                    role="character",
+                    placeholder=cp.get("is_placeholder", False),
+                )
+            )
+        vo_lines: list[VOLine] = [
+            VOLine(
+                line_id=vo["item_id"],
+                speaker_id=vo["speaker_id"],
+                text=vo["text"],
+            )
+            for vo in raw.get("vo_items", [])
+            if scene_id in vo["item_id"]
+        ]
+        shots.append(
+            Shot(
+                shot_id=scene_id,
+                duration_ms=_DEFAULT_SHOT_MS,
+                visual_assets=visual_assets,
+                vo_lines=vo_lines,
+            )
+        )
+    return AssetManifest(
+        schema_version=raw.get("schema_version", "1.0.0"),
+        manifest_id=raw["manifest_id"],
+        project_id=raw["project_id"],
+        shotlist_ref=raw["shotlist_ref"],
+        timing_lock_hash=timing_lock_hash,
+        shots=shots,
+    )
+
+
+def _adapt_manifest_final(raw: dict, timing_lock_hash: str) -> AssetManifest:
+    """Translate AssetManifest_final / AssetManifest.media JSON → renderer AssetManifest.
+
+    Final/media layout: flat items[] list with asset_type + resolved URIs.
+    """
+    items = raw.get("items", [])
+    backgrounds = [i for i in items if i["asset_type"] == "background"]
+    characters  = [i for i in items if i["asset_type"] == "character"]
+    vo_items    = [i for i in items if i["asset_type"] == "vo"]
+
+    shots: list[Shot] = []
+    for bg in backgrounds:
+        bg_id    = bg["asset_id"]
+        scene_id = bg_id[len("bg-"):] if bg_id.startswith("bg-") else bg_id
+
+        visual_assets: list[VisualAsset] = [
+            VisualAsset(
+                asset_id=bg_id,
+                role="background",
+                asset_uri=bg.get("uri"),
+                placeholder=bg.get("is_placeholder", False),
+            )
+        ]
+        for cp in characters:
+            visual_assets.append(
+                VisualAsset(
+                    asset_id=cp["asset_id"],
+                    role="character",
+                    asset_uri=cp.get("uri"),
+                    placeholder=cp.get("is_placeholder", False),
+                )
+            )
+
+        vo_lines: list[VOLine] = []
+        for vo in vo_items:
+            vo_id = vo["asset_id"]
+            if scene_id not in vo_id:
+                continue
+            parts = vo_id.split("-")
+            speaker_id = parts[-2] if len(parts) >= 2 else "unknown"
+            vo_lines.append(VOLine(line_id=vo_id, speaker_id=speaker_id, text=""))
+
+        shots.append(
+            Shot(
+                shot_id=scene_id,
+                duration_ms=_DEFAULT_SHOT_MS,
+                visual_assets=visual_assets,
+                vo_lines=vo_lines,
+            )
+        )
+    return AssetManifest(
+        schema_version=raw.get("schema_version", "1.0.0"),
+        manifest_id=raw["manifest_id"],
+        project_id=raw.get("project_id", raw["manifest_id"]),
+        shotlist_ref=raw.get("shotlist_ref", ""),
+        timing_lock_hash=timing_lock_hash,
+        shots=shots,
+    )
+
+
+def _adapt_plan(raw: dict, render_plan_path: Path) -> RenderPlan:
+    """Translate orchestrator RenderPlan JSON → renderer RenderPlan model."""
+    width_str, height_str = raw["resolution"].split("x", 1)
+    resolution = Resolution(
+        width=int(width_str),
+        height=int(height_str),
+        aspect=raw["aspect_ratio"],
+    )
+    asset_resolutions = {
+        a["asset_id"]: a["uri"]
+        for a in raw.get("resolved_assets", [])
+        if a.get("uri") and not a["uri"].startswith("placeholder://")
+    }
+    return RenderPlan(
+        schema_version=raw.get("schema_version", "1.0.0"),
+        plan_id=raw["plan_id"],
+        project_id=raw["project_id"],
+        profile=raw["profile"],
+        resolution=resolution,
+        fps=raw["fps"],
+        asset_manifest_ref=f"file://{render_plan_path.resolve()}",
+        timing_lock_hash=raw["timing_lock_hash"],
+        asset_resolutions=asset_resolutions,
+        audio_resolutions={},
+    )
+
+
+# =============================================================================
+# cmd_render  (video render subcommand — §41.4 canonical interface)
+# =============================================================================
+
+def cmd_render(
+    manifest_path: Path,
+    plan_path: Path,
+    out_path: Path,
+    video_path: Path,
+    srt_path: Path | None = None,
+    dry_run: bool = False,
+) -> int:
+    """Render AssetManifest + RenderPlan → mp4 + srt + RenderOutput.json.
+
+    Validates inputs and output against pinned contracts (§41.4 rules 3–4).
+    Prints RenderOutput JSON to stdout on success.
+    Returns exit code: 0 on success, 1 on failure.
+    """
+    if srt_path is None:
+        srt_path = video_path.with_suffix(".srt")
+
+    try:
+        raw_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        raw_plan = json.loads(plan_path.read_text(encoding="utf-8"))
+
+        # Validate inputs against contracts before doing any work (§41.4 rule 3).
+        _validate_contract(raw_manifest, f"asset manifest ({manifest_path.name})")
+        _validate_contract(raw_plan, f"render plan ({plan_path.name})")
+
+        # Auto-detect manifest format and adapt to renderer models.
+        #   native Pydantic      → top-level "shots" key
+        #   orchestrator draft   → "backgrounds" / "character_packs" / "vo_items"
+        #   final / media        → flat "items" list
+        if "shots" in raw_manifest:
+            manifest = AssetManifest.model_validate(raw_manifest)
+            plan = RenderPlan.model_validate(raw_plan)
+        elif "items" in raw_manifest:
+            manifest = _adapt_manifest_final(raw_manifest, raw_plan["timing_lock_hash"])
+            plan = _adapt_plan(raw_plan, plan_path)
+        else:
+            manifest = _adapt_manifest(raw_manifest, raw_plan["timing_lock_hash"])
+            plan = _adapt_plan(raw_plan, plan_path)
+
+        if not manifest.shots:
+            print(
+                "No shots found in manifest — check AssetManifest format.",
+                file=sys.stderr,
+            )
+            return 1
+
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_dir = Path(tmp)
+            result = PreviewRenderer(
+                manifest, plan,
+                output_dir=tmp_dir,
+                asset_manifest_ref=f"file://{manifest_path.resolve()}",
+                dry_run=dry_run,
+            ).render()
+
+            # Validate RenderOutput against contract before writing to disk.
+            # Skipped in dry-run: video_uri/captions_uri are null there and the
+            # contract requires strings (no partial-output contract exists yet).
+            if not dry_run:
+                _validate_contract(
+                    json.loads(result.model_dump_json()),
+                    "render output",
+                )
+
+            # Write RenderOutput.json to the explicit --out path.
+            out_path.parent.mkdir(parents=True, exist_ok=True)
+            out_path.write_text(result.model_dump_json(indent=2), encoding="utf-8")
+
+            # Move mp4 and srt to their explicit output paths.
+            if not dry_run:
+                video_path.parent.mkdir(parents=True, exist_ok=True)
+                shutil.move(str(tmp_dir / "output.mp4"), str(video_path))
+                srt_path.parent.mkdir(parents=True, exist_ok=True)
+                shutil.move(str(tmp_dir / "output.srt"), str(srt_path))
+
+        print(result.model_dump_json(indent=2))
+        return 0
+
+    except SystemExit:
+        raise
+    except Exception as exc:  # noqa: BLE001
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
+
+
+# =============================================================================
+# cmd_audit_render
+# =============================================================================
 
 def _diff_json(
     a: dict,
@@ -125,6 +417,10 @@ def cmd_audit_render(
     return 0 if not diff_fields else 1
 
 
+# =============================================================================
+# cmd_verify
+# =============================================================================
+
 def _fingerprint_bytes(out_dir: Path, profile: str = "preview") -> bytes:
     manifest, plan = build_minimal_verify_fixture(
         profile=_CLI_TO_PLAN_PROFILE[profile]
@@ -180,9 +476,53 @@ def cmd_verify(strict: bool = False, profile: str = "preview") -> int:
     return 0
 
 
+# =============================================================================
+# CLI entry point
+# =============================================================================
+
 def main() -> None:
-    parser = argparse.ArgumentParser(description="video — renderer CLI")
+    parser = argparse.ArgumentParser(
+        prog="video",
+        description="video — deterministic preview renderer CLI",
+    )
     sub = parser.add_subparsers(dest="command", required=True)
+
+    # ── video render ──────────────────────────────────────────────────────────
+    render_parser = sub.add_parser(
+        "render",
+        help="Render AssetManifest + RenderPlan → mp4 + srt + RenderOutput.json",
+        description=(
+            "Canonical pipeline render (§41.4).\n"
+            "Validates inputs and output against pinned contracts. "
+            "Prints RenderOutput JSON to stdout."
+        ),
+    )
+    render_parser.add_argument(
+        "--manifest", type=Path, required=True, metavar="PATH",
+        help="Path to AssetManifest.final.json",
+    )
+    render_parser.add_argument(
+        "--plan", type=Path, required=True, metavar="PATH",
+        help="Path to RenderPlan.json",
+    )
+    render_parser.add_argument(
+        "--out", type=Path, required=True, metavar="PATH",
+        help="Output path for RenderOutput.json",
+    )
+    render_parser.add_argument(
+        "--video", type=Path, required=True, metavar="PATH",
+        help="Output path for output.mp4",
+    )
+    render_parser.add_argument(
+        "--srt", type=Path, default=None, metavar="PATH",
+        help="Output path for output.srt (default: <video-path with .srt extension>)",
+    )
+    render_parser.add_argument(
+        "--dry-run", action="store_true",
+        help="Validate inputs and write RenderOutput only; skip mp4/srt",
+    )
+
+    # ── video verify ─────────────────────────────────────────────────────────
     verify_parser = sub.add_parser("verify", help="Run system verification export")
     verify_parser.add_argument(
         "--strict", action="store_true",
@@ -192,6 +532,8 @@ def main() -> None:
         "--profile", default="preview", choices=["preview", "high"],
         help="Quality profile (default: preview)",
     )
+
+    # ── video audit-render ────────────────────────────────────────────────────
     audit_parser = sub.add_parser("audit-render", help="Detect nondeterminism in a render")
     audit_parser.add_argument("render_plan",    help="Path to RenderPlan JSON")
     audit_parser.add_argument("asset_manifest", help="Path to AssetManifest JSON")
@@ -199,8 +541,19 @@ def main() -> None:
         "--dry-run", action="store_true",
         help="Compare dry-run outputs only (faster; no ffmpeg call)",
     )
+
     args = parser.parse_args()
-    if args.command == "verify":
+
+    if args.command == "render":
+        sys.exit(cmd_render(
+            manifest_path=args.manifest,
+            plan_path=args.plan,
+            out_path=args.out,
+            video_path=args.video,
+            srt_path=args.srt,
+            dry_run=args.dry_run,
+        ))
+    elif args.command == "verify":
         sys.exit(cmd_verify(strict=args.strict, profile=args.profile))
     elif args.command == "audit-render":
         sys.exit(cmd_audit_render(

@@ -51,6 +51,33 @@ The package exposes one entry point after `pip install -e .`:
 video <subcommand> [options]
 ```
 
+### `video render` — canonical pipeline render
+
+The primary render interface (§41.4). Called by the orchestrator.
+
+```bash
+video render \
+  --manifest AssetManifest.final.json \
+  --plan     RenderPlan.json \
+  --out      RenderOutput.json \
+  --video    output.mp4 \
+  [--srt     output.srt] \
+  [--dry-run]
+```
+
+| Flag | Required | Description |
+|---|---|---|
+| `--manifest` | yes | Path to AssetManifest.final.json |
+| `--plan` | yes | Path to RenderPlan.json |
+| `--out` | yes | Output path for RenderOutput.json |
+| `--video` | yes | Output path for output.mp4 |
+| `--srt` | no | Output path for output.srt (default: `<video path>.srt`) |
+| `--dry-run` | no | Validate inputs and write RenderOutput only; skip mp4/srt |
+
+Validates inputs and output against pinned contracts in `third_party/contracts/` before writing. Prints RenderOutput JSON to stdout. Exit 0 on success, 1 on failure.
+
+---
+
 ### `video verify` — system verification
 
 Renders a built-in canary scene twice and checks for determinism.
@@ -86,9 +113,9 @@ Prints a JSON `RenderAudit` with a `diff_fields` list. Exit 0 if identical, 1 if
 
 ---
 
-### `scripts/render_from_orchestrator.py` — standalone renderer
+### `scripts/render_from_orchestrator.py` — backward-compatible wrapper
 
-Format-agnostic renderer script. Auto-detects native or orchestrator manifest formats.
+Legacy entry point that delegates to `video render` internally. Keeps the `--out-dir` flag shape for existing integrations. Prefer `video render` for new integrations.
 
 ```bash
 python scripts/render_from_orchestrator.py \
