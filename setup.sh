@@ -54,6 +54,47 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
+# Resolve the Python interpreter and pip for this project.
+# Priority:
+#   1. Already-activated virtualenv  ($VIRTUAL_ENV)
+#   2. Local .venv in project root   ($SCRIPT_DIR/.venv)
+#   3. virtualenvwrapper venv named  (~/.virtualenvs/<project-dir-name>)
+#   4. System python3 / pip3
+resolve_python_cmd() {
+    local project_name
+    project_name="$(basename "$SCRIPT_DIR")"
+
+    if [[ -n "${VIRTUAL_ENV:-}" ]]; then
+        echo "$VIRTUAL_ENV/bin/python"
+        return
+    fi
+
+    if [[ -x "$SCRIPT_DIR/.venv/bin/python" ]]; then
+        echo "$SCRIPT_DIR/.venv/bin/python"
+        return
+    fi
+
+    if [[ -x "$HOME/.virtualenvs/$project_name/bin/python" ]]; then
+        echo "$HOME/.virtualenvs/$project_name/bin/python"
+        return
+    fi
+
+    echo "python3"
+}
+
+resolve_pip_cmd() {
+    local py
+    py="$(resolve_python_cmd)"
+    # Derive pip from the same interpreter so they always match
+    local pip_path="${py%python*}pip"
+    if [[ -x "$pip_path" ]]; then
+        echo "$pip_path"
+    else
+        # Fallback: ask the interpreter itself for pip
+        echo "$py -m pip"
+    fi
+}
+
 # =============================================================================
 # Requirements Installation
 # =============================================================================
@@ -61,16 +102,14 @@ command_exists() {
 install_requirements() {
     print_header "Installing Requirements"
 
+    local pip_cmd
+    pip_cmd="$(resolve_pip_cmd)"
+    print_info "Using pip: $pip_cmd"
+
     # ── Python packages ───────────────────────────────────────────────────────
     local req_file="$SCRIPT_DIR/tools/requirements.txt"
     if [[ -f "$req_file" ]]; then
         print_info "Installing Python packages from tools/requirements.txt ..."
-        local pip_cmd
-        if [[ -n "${VIRTUAL_ENV:-}" ]]; then
-            pip_cmd="$VIRTUAL_ENV/bin/pip"
-        else
-            pip_cmd="pip3"
-        fi
         if $pip_cmd install -r "$req_file"; then
             print_success "Python packages installed"
         else
@@ -78,6 +117,19 @@ install_requirements() {
         fi
     else
         print_info "No tools/requirements.txt found — skipping Python packages"
+    fi
+
+    # ── Project package (pyproject.toml) ──────────────────────────────────────
+    local pyproject_file="$SCRIPT_DIR/pyproject.toml"
+    if [[ -f "$pyproject_file" ]]; then
+        print_info "Installing project package in editable mode (pip install -e .) ..."
+        if $pip_cmd install -e "$SCRIPT_DIR"; then
+            print_success "Project package installed"
+        else
+            print_warning "Project package install failed — check pyproject.toml"
+        fi
+    else
+        print_info "No pyproject.toml found — skipping project package install"
     fi
 
     echo ""
@@ -92,13 +144,9 @@ install_requirements() {
 run_tests() {
     print_header "Run Tests"
 
-    # Python interpreter — respects active virtualenv
     local python_cmd
-    if [[ -n "${VIRTUAL_ENV:-}" ]]; then
-        python_cmd="$VIRTUAL_ENV/bin/python"
-    else
-        python_cmd="python3"
-    fi
+    python_cmd="$(resolve_python_cmd)"
+    print_info "Using Python: $python_cmd"
 
     print_info "Slow tests auto-skip if ffmpeg is not on PATH."
     local _rc=0
@@ -194,7 +242,7 @@ show_menu() {
     echo -e "     ${GREEN}(Non-container local test suites)${NC}"
     echo ""
     echo -e "  ${BOLD}2)${NC} Install requirements"
-    echo -e "     ${CYAN}(Install Python packages from tools/requirements.txt)${NC}"
+    echo -e "     ${CYAN}(Install tools/requirements.txt + project package)${NC}"
     echo ""
     echo -e "  ${BOLD}3)${NC} Show usage"
     echo -e "     ${YELLOW}(How to run the renderer CLI)${NC}"
