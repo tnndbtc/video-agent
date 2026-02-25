@@ -72,6 +72,13 @@
         "audio_intent": {
           "$ref": "#/$defs/AudioIntent"
         },
+        "background_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "References bg_id in AssetManifest backgrounds[]. Provides the explicit scene→background mapping for the plan builder. Must match a bg_id value in the episode's AssetManifest_draft.json."
+        },
         "camera_framing": {
           "type": "string"
         },
@@ -125,6 +132,13 @@
           "items": {
             "type": "string"
           }
+        },
+        "vo_item_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "References item_id in AssetManifest vo_items[]. Provides the explicit shot→VO mapping for the plan builder. Must match an item_id value in the episode's AssetManifest_draft.json vo_items array."
         },
         "vo_speaker_id": {
           "type": [

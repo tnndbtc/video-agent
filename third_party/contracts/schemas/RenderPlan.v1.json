@@ -5,6 +5,7 @@
   "required": ["schema_id", "schema_version", "plan_id", "project_id", "manifest_ref", "timing_lock_hash", "profile", "resolution", "aspect_ratio", "fps", "resolved_assets"],
   "additionalProperties": true,
   "properties": {
+    "schema_id": {"type": "string"},
     "schema_version": {"type": "string", "const": "1.0.0"},
     "plan_id": {"type": "string"},
     "project_id": {"type": "string"},
@@ -29,6 +30,78 @@
           "uri": {"type": "string"},
           "license_type": {"type": "string"},
           "is_placeholder": {"type": "boolean"}
+        }
+      }
+    },
+    "shots": {
+      "type": "array",
+      "description": "Ordered shot sequence for the renderer. Index 0 = first frame of video. Each entry is self-contained with resolved asset_id values. When present, the renderer uses this array directly instead of inferring shots from resolved_assets.",
+      "items": {
+        "$ref": "#/$defs/RenderedShot"
+      }
+    }
+  },
+  "$defs": {
+    "RenderedShot": {
+      "type": "object",
+      "required": ["shot_id", "scene_id", "duration_ms", "background_asset_id", "character_asset_ids", "vo_lines"],
+      "additionalProperties": true,
+      "properties": {
+        "shot_id": {
+          "type": "string",
+          "description": "Matches ShotList.shots[].shot_id"
+        },
+        "scene_id": {
+          "type": "string",
+          "description": "Matches ShotList.shots[].scene_id"
+        },
+        "duration_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "ShotList.shots[].duration_sec × 1000"
+        },
+        "background_asset_id": {
+          "type": ["string", "null"],
+          "description": "Resolved asset_id from AssetManifest backgrounds[] for this shot's location"
+        },
+        "character_asset_ids": {
+          "type": "array",
+          "description": "Ordered list of resolved asset_ids for characters appearing in this shot",
+          "items": {"type": "string"}
+        },
+        "vo_lines": {
+          "type": "array",
+          "description": "VO lines assigned to this shot with timeline offsets relative to shot start. Empty array if no VO in this shot.",
+          "items": {
+            "$ref": "#/$defs/VOLine"
+          }
+        }
+      }
+    },
+    "VOLine": {
+      "type": "object",
+      "required": ["line_id", "speaker_id", "text", "timeline_in_ms", "timeline_out_ms"],
+      "additionalProperties": false,
+      "properties": {
+        "line_id": {
+          "type": "string",
+          "description": "Matches AssetManifest vo_items[].item_id"
+        },
+        "speaker_id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "timeline_in_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Start offset in ms relative to shot start. Phase 0: evenly distributed approximation. Phase 1: derived from real TTS audio timestamps."
+        },
+        "timeline_out_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "End offset in ms relative to shot start. Must be <= duration_ms."
         }
       }
     }
