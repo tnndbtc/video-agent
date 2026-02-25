@@ -219,7 +219,14 @@ def _adapt_manifest_final(raw: dict, timing_lock_hash: str) -> AssetManifest:
 
 
 def _adapt_plan(raw: dict, render_plan_path: Path) -> RenderPlan:
-    """Translate orchestrator RenderPlan JSON → renderer RenderPlan model."""
+    """Translate orchestrator RenderPlan JSON → renderer RenderPlan model.
+
+    asset_resolutions only carries file:// URIs; placeholder:// entries are
+    excluded so the renderer falls back to placeholder generation for those
+    assets.  When the plan also contains shots[], _build_shots_from_plan uses
+    a separate full URI map (see cmd_render) that includes placeholder:// so
+    it can set VisualAsset.placeholder correctly.
+    """
     width_str, height_str = raw["resolution"].split("x", 1)
     resolution = Resolution(
         width=int(width_str),
@@ -243,6 +250,73 @@ def _adapt_plan(raw: dict, render_plan_path: Path) -> RenderPlan:
         asset_resolutions=asset_resolutions,
         audio_resolutions={},
     )
+
+
+def _build_shots_from_plan(
+    plan_shots: list[dict],
+    all_asset_uris: dict[str, str | None],
+) -> list[Shot]:
+    """Build renderer Shot objects from RenderPlan.shots[].
+
+    RenderPlan.shots[] is the authoritative ordered shot sequence emitted by
+    the orchestrator plan builder.  Each entry carries fully resolved asset_id
+    values and per-shot VO lines, replacing the background-grouping heuristic
+    used by _adapt_manifest_final when the plan lacks explicit shot data.
+
+    all_asset_uris: {asset_id → uri} built from resolved_assets[] *including*
+    placeholder:// entries, so VisualAsset.placeholder is set correctly and
+    the renderer knows which assets need synthetic placeholder generation.
+    """
+    shots: list[Shot] = []
+    for s in plan_shots:
+        # ── Background ────────────────────────────────────────────────────────
+        bg_id = s.get("background_asset_id")
+        visual_assets: list[VisualAsset] = []
+        if bg_id:
+            bg_uri = all_asset_uris.get(bg_id)
+            visual_assets.append(
+                VisualAsset(
+                    asset_id=bg_id,
+                    role="background",
+                    asset_uri=bg_uri,
+                    placeholder=not bg_uri or bg_uri.startswith("placeholder://"),
+                )
+            )
+
+        # ── Characters ────────────────────────────────────────────────────────
+        for char_id in s.get("character_asset_ids", []):
+            char_uri = all_asset_uris.get(char_id)
+            visual_assets.append(
+                VisualAsset(
+                    asset_id=char_id,
+                    role="character",
+                    asset_uri=char_uri,
+                    placeholder=not char_uri or char_uri.startswith("placeholder://"),
+                )
+            )
+
+        # ── VO lines ──────────────────────────────────────────────────────────
+        vo_lines: list[VOLine] = []
+        for v in s.get("vo_lines", []):
+            vo_lines.append(
+                VOLine(
+                    line_id=v["line_id"],
+                    speaker_id=v["speaker_id"],
+                    text=v["text"],
+                    timeline_in_ms=v["timeline_in_ms"],
+                    timeline_out_ms=v["timeline_out_ms"],
+                )
+            )
+
+        shots.append(
+            Shot(
+                shot_id=s["shot_id"],
+                duration_ms=s["duration_ms"],
+                visual_assets=visual_assets,
+                vo_lines=vo_lines,
+            )
+        )
+    return shots
 
 
 # =============================================================================
@@ -274,13 +348,48 @@ def cmd_render(
         _validate_contract(raw_manifest, f"asset manifest ({manifest_path.name})")
         _validate_contract(raw_plan, f"render plan ({plan_path.name})")
 
+        # Full URI map from resolved_assets[] — includes placeholder:// entries
+        # so _build_shots_from_plan can mark unresolved assets correctly.
+        all_asset_uris: dict[str, str | None] = {
+            a["asset_id"]: a.get("uri")
+            for a in raw_plan.get("resolved_assets", [])
+            if a.get("asset_id")
+        }
+
         # Auto-detect manifest format and adapt to renderer models.
-        #   native Pydantic      → top-level "shots" key
-        #   orchestrator draft   → "backgrounds" / "character_packs" / "vo_items"
-        #   final / media        → flat "items" list
+        #
+        #   Priority 1 — native Pydantic manifest  ("shots" key present)
+        #     → manifest and plan are in renderer-native format; validate directly.
+        #
+        #   Priority 2 — plan carries shots[]  (orchestrator §41.4 canonical path)
+        #     → use RenderPlan.shots[] as the authoritative ordered shot sequence;
+        #       manifest provides envelope metadata only (manifest_id, project_id).
+        #       Applies regardless of whether the manifest is "items" or draft format.
+        #
+        #   Priority 3 — final/media manifest  ("items" key, no plan shots[])
+        #     → infer shots from background items (one bg item = one shot, 3 s each).
+        #       Fallback for plans produced before shots[] was introduced.
+        #
+        #   Priority 4 — orchestrator draft manifest  (fallback)
+        #     → infer shots from backgrounds[] / character_packs[] / vo_items[].
         if "shots" in raw_manifest:
             manifest = AssetManifest.model_validate(raw_manifest)
             plan = RenderPlan.model_validate(raw_plan)
+        elif raw_plan.get("shots"):
+            shots = _build_shots_from_plan(raw_plan["shots"], all_asset_uris)
+            manifest = AssetManifest(
+                schema_version=raw_manifest.get("schema_version", "1.0.0"),
+                manifest_id=raw_manifest.get(
+                    "manifest_id", raw_plan.get("plan_id", "unknown")
+                ),
+                project_id=raw_manifest.get(
+                    "project_id", raw_plan.get("project_id", "unknown")
+                ),
+                shotlist_ref=raw_manifest.get("shotlist_ref", ""),
+                timing_lock_hash=raw_plan["timing_lock_hash"],
+                shots=shots,
+            )
+            plan = _adapt_plan(raw_plan, plan_path)
         elif "items" in raw_manifest:
             manifest = _adapt_manifest_final(raw_manifest, raw_plan["timing_lock_hash"])
             plan = _adapt_plan(raw_plan, plan_path)
