@@ -75,6 +75,15 @@
           "items": {
             "$ref": "#/$defs/VOLine"
           }
+        },
+        "sfx_asset_ids": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Resolved asset_ids for SFX clips in this shot, in the same order as AssetManifest_draft.sfx_items[] for this shot. Each must match an asset_id present in resolved_assets[]. Empty array if the shot has no SFX or all SFX are pending."
+        },
+        "music_asset_id": {
+          "type": ["string", "null"],
+          "description": "Resolved asset_id for the background music track in this shot. Null if no music or the item is pending. Must match an asset_id present in resolved_assets[] when not null."
         }
       }
     },
